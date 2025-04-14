@@ -1,0 +1,181 @@
+﻿@model List<proje_mvc.Models.PersonelModel>
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personel Listesi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Genel Stil */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Tablo Stil */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+            table th, table td {
+                padding: 12px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+
+            table th {
+                background-color: #4CAF50;
+                color: white;
+            }
+
+            table tr:hover {
+                background-color: #f1f1f1;
+            }
+
+        /* Buton Stil */
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+
+            .btn:hover {
+                background-color: #45a049;
+            }
+
+        /* Arama Kutusu */
+        .search-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+            .search-container input[type="text"] {
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid #ddd;
+                width: 70%;
+                font-size: 16px;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Personel Listesi</h2>
+
+        <!-- Arama Alanı -->
+        <div class="search-container">
+            <input type="text" id="personelSearch" placeholder="Personel adı, soyadı veya TC ile ara..." onkeyup="searchPersonel()" />
+        </div>
+
+        <a href="@Url.Action("personel_ekle", "Home")" class="btn btn-success">+ Yeni Personel Ekle</a>
+
+
+        <table id="mvc_personel_kayit">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Doğum Tarihi</th>
+                    <th>Adres</th>
+                    <th>TC Kimlik No</th>
+                    <th>Telefon</th>
+                    <th>İşe Başlama Tarihi</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var personel in Model)
+                {
+                    <tr>
+                        <td>@personel.Id</td>
+                        <td>@personel.ad</td>
+                        <td>@personel.soyad</td>
+                        <td>@personel.dogum_tarihi</td>
+                        <td>@personel.adres</td>
+                        <td>@personel.TC</td>
+                        <td>@personel.telefon</td>
+                        <td>@personel.ise_baslama_tarihi</td>
+                        <td>
+                         <form method="post" action="@Url.Action("personel_guncelle", "Home")">
+
+                                <input type="hidden" name="personel_id" value="@personel.personel_id" />
+                                <button type="submit" class="btn">Düzenle</button>
+                            </form>
+                            <form method="post" action="@Url.Action("personel_sil", "Home")">
+                                <input type="hidden" name="personel_id" value="@personel.personel_id" />
+                                <button type="submit" class="btn" style="background-color: #f44336;" onclick="return confirm('Bu personeli silmek istediğinizden emin misiniz?');">
+                                    Sil
+                                </button>
+                            </form>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function searchPersonel() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById('personelSearch');
+            filter = input.value.toUpperCase();
+            table = document.getElementById("personelTable");
+            tr = table.getElementsByTagName("tr");
+
+            // Arama işlemi her satır için yapılacak
+            for (i = 1; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td");
+                let match = false;
+
+                // Her sütunda arama yapalım
+                for (let j = 0; j < td.length; j++) {
+                    if (td[j]) {
+                        txtValue = td[j].textContent || td[j].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            match = true;
+                            break;
+                        }
+                    }
+                }
+
+                // Eğer bir eşleşme varsa, satırı göster
+                if (match) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

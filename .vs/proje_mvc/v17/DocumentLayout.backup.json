@@ -1,0 +1,590 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\models\\personelmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\models\\personelmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\models\\kurummodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\models\\kurummodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\models\\projedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\models\\projedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\controllers\\kurumconroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\controllers\\kurumconroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\kurum_listele.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\kurum_listele.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\giris.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\giris.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\models\\kullanicimodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\models\\kullanicimodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\personel_ekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\personel_ekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\personel_listele.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\personel_listele.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\gorev_ekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\gorev_ekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\models\\izinmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\models\\izinmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\models\\gorevmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\models\\gorevmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\models\\kartmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\models\\kartmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\gorev_listele.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\gorev_listele.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\gorev_guncelle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\gorev_guncelle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\izin_ekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\izin_ekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\izin_guncelle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\izin_guncelle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\kurum_ekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\kurum_ekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\kart_guncelle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\kart_guncelle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\izin_listele.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\izin_listele.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\kart_listesi.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\kart_listesi.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\personel_sil.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\personel_sil.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\kart_sil.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\kart_sil.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\kart_ekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\kart_ekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\personel_guncelle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\personel_guncelle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "proje_mvc\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "proje_mvc\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAMwCoAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T10:53:32.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "personel_listele.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\personel_listele.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\personel_listele.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\personel_listele.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Home\\personel_listele.cshtml",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAAIgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-29T18:35:41.897Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "personel_ekle.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\personel_ekle.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\personel_ekle.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\personel_ekle.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Home\\personel_ekle.cshtml",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAwIcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T08:52:08.429Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "KurumModel.cs",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\KurumModel.cs",
+              "RelativeDocumentMoniker": "proje_mvc\\Models\\KurumModel.cs",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\KurumModel.cs",
+              "RelativeToolTip": "proje_mvc\\Models\\KurumModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T08:47:11.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Program.cs",
+              "RelativeDocumentMoniker": "proje_mvc\\Program.cs",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Program.cs",
+              "RelativeToolTip": "proje_mvc\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T10:24:43.277Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProjeDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\ProjeDbContext.cs",
+              "RelativeDocumentMoniker": "proje_mvc\\Models\\ProjeDbContext.cs",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\ProjeDbContext.cs",
+              "RelativeToolTip": "proje_mvc\\Models\\ProjeDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T09:40:59.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PersonelModel.cs",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\PersonelModel.cs",
+              "RelativeDocumentMoniker": "proje_mvc\\Models\\PersonelModel.cs",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\PersonelModel.cs",
+              "RelativeToolTip": "proje_mvc\\Models\\PersonelModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T08:47:35.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "KurumConroller.cs",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Controllers\\KurumConroller.cs",
+              "RelativeDocumentMoniker": "proje_mvc\\Controllers\\KurumConroller.cs",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Controllers\\KurumConroller.cs",
+              "RelativeToolTip": "proje_mvc\\Controllers\\KurumConroller.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T11:24:21.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Giris.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\Giris.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\Giris.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\Giris.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Home\\Giris.cshtml",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAowFQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T09:34:07.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "KullaniciModel.cs",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\KullaniciModel.cs",
+              "RelativeDocumentMoniker": "proje_mvc\\Models\\KullaniciModel.cs",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\KullaniciModel.cs",
+              "RelativeToolTip": "proje_mvc\\Models\\KullaniciModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T09:29:19.569Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "kurum_listele.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\kurum_listele.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\kurum_listele.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\kurum_listele.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Home\\kurum_listele.cshtml",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAAAKcAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T08:48:48.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T10:54:04.906Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T09:38:17.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T09:38:18.744Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "proje_mvc\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\appsettings.Development.json",
+              "RelativeToolTip": "proje_mvc\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-08T09:38:22.684Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "additional-methods.js",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+              "RelativeDocumentMoniker": "proje_mvc\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+              "RelativeToolTip": "proje_mvc\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+              "ViewState": "AgIAAPcAAAAAAAAAAAAjwBABAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-04-08T09:39:58.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T09:38:14.537Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T09:37:55.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\appsettings.json",
+              "RelativeDocumentMoniker": "proje_mvc\\appsettings.json",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\appsettings.json",
+              "RelativeToolTip": "proje_mvc\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-08T09:37:39.024Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "GorevModel.cs",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\GorevModel.cs",
+              "RelativeDocumentMoniker": "proje_mvc\\Models\\GorevModel.cs",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\GorevModel.cs",
+              "RelativeToolTip": "proje_mvc\\Models\\GorevModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-17T09:26:05.185Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "IzinModel.cs",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\IzinModel.cs",
+              "RelativeDocumentMoniker": "proje_mvc\\Models\\IzinModel.cs",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\IzinModel.cs",
+              "RelativeToolTip": "proje_mvc\\Models\\IzinModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T18:16:52.046Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "gorev_ekle.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\gorev_ekle.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\gorev_ekle.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\gorev_ekle.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Home\\gorev_ekle.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-29T18:52:46.671Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "gorev_listele.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\gorev_listele.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\gorev_listele.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\gorev_listele.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Home\\gorev_listele.cshtml",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAAAHQAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-29T19:04:44.212Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "gorev_guncelle.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\gorev_guncelle.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\gorev_guncelle.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\gorev_guncelle.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Home\\gorev_guncelle.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-29T18:54:50.309Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "KartModel.cs",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\KartModel.cs",
+              "RelativeDocumentMoniker": "proje_mvc\\Models\\KartModel.cs",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\KartModel.cs",
+              "RelativeToolTip": "proje_mvc\\Models\\KartModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-29T18:09:21.614Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "izin_ekle.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\izin_ekle.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\izin_ekle.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\izin_ekle.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Home\\izin_ekle.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-29T18:21:55.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "izin_guncelle.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\izin_guncelle.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\izin_guncelle.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\izin_guncelle.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Home\\izin_guncelle.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T09:22:17.56Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "kart_sil.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\kart_sil.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\kart_sil.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\kart_sil.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Home\\kart_sil.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-29T18:34:41.103Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "personel_sil.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\personel_sil.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\personel_sil.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\personel_sil.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Home\\personel_sil.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-29T18:35:34.987Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "kurum_ekle.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\kurum_ekle.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\kurum_ekle.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\kurum_ekle.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Home\\kurum_ekle.cshtml",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAE4AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T08:48:05.177Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "izin_listele.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\izin_listele.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\izin_listele.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\izin_listele.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Home\\izin_listele.cshtml",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAuwIUAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-29T18:14:46.595Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "kart_ekle.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\kart_ekle.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\kart_ekle.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\kart_ekle.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Home\\kart_ekle.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-29T18:07:24.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "personel_guncelle.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\personel_guncelle.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\personel_guncelle.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\personel_guncelle.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Home\\personel_guncelle.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-10T15:33:30.3Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "kart_listesi.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\kart_listesi.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\kart_listesi.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\kart_listesi.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Home\\kart_listesi.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB4AAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-17T10:00:46.669Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "kart_guncelle.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\kart_guncelle.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\kart_guncelle.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\kart_guncelle.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Home\\kart_guncelle.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-17T09:58:52.275Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

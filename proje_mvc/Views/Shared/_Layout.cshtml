@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personel Yönetimi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.css" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
+
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #4a4e69;
+        }
+
+        .navbar-brand {
+            font-size: 1.75rem;
+            color: #ffffff;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff;
+            transition: background-color 0.3s;
+        }
+
+            .navbar-nav .nav-link:hover {
+                background-color: #9a8c98;
+                color: #ffffff;
+            }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        .info-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+            .info-card:hover {
+                transform: scale(1.05);
+            }
+
+            .info-card h5 {
+                font-size: 1.5rem;
+                color: #343a40;
+            }
+
+            .info-card p {
+                font-size: 2.2rem;
+                font-weight: bold;
+                color: #348a67;
+            }
+
+        .chart-container {
+            width: 80%;
+            max-width: 700px;
+            margin: 30px auto;
+        }
+
+        #calendar {
+            margin-top: 50px;
+        }
+
+        #recentRecords li {
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+            transition: background-color 0.2s;
+        }
+
+            #recentRecords li:hover {
+                background-color: #e2e6ea;
+            }
+
+        footer {
+            background-color: #4a4e69;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #calendar {
+            margin-top: 50px;
+            height: 600px; /* Yükseklik ekleyin */
+        }
+    </style>
+
+</head>
+<body>
+
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="#">Yönetim Paneli</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/home/index">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/settings/index">Settings</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/privacy/index">Privacy Policy</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact/index">İletişim</a></li>
+
+                    <!-- Kurum İşlemleri Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="kurumDropdown" role="button" data-bs-toggle="dropdown">Kurum İşlemleri</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/home/kurum_ekle">Kurum Ekle</a></li>
+                            <li><a class="dropdown-item" href="/home/kurum_listele">Kurum Listele</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Personel İşlemleri Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="personelDropdown" role="button" data-bs-toggle="dropdown">Personel İşlemleri</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/home/personel_ekle">Personel Ekle</a></li>
+                            <li><a class="dropdown-item" href="/home/personel_listele">Personel Listele</a></li>
+                           
+                        </ul>
+                    </li>
+
+                    <!-- Kart İşlemleri Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="kartDropdown" role="button" data-bs-toggle="dropdown">Kart İşlemleri</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/home/kart_ekle">Kart Ekle</a></li>
+                            <li><a class="dropdown-item" href="/home/kart_listesi">Kart Listele</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- İzin İşlemleri Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="izinDropdown" role="button" data-bs-toggle="dropdown">İzin İşlemleri</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/home/izin_ekle">İzin Ekle</a></li>
+                            <li><a class="dropdown-item" href="/home/izin_listele">İzin Listele</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Görev İşlemleri Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="gorevDropdown" role="button" data-bs-toggle="dropdown">Görev İşlemleri</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/home/gorev_ekle">Görev Ekle</a></li>
+                            <li><a class="dropdown-item" href="/home/gorev_listele">Görev Listele</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- İçerik Alanı -->
+    <div class="container">
+        @RenderBody()
+        <div class="row">
+            <div class="col-md-4">
+                <div class="info-card">
+                    <h5>Toplam Kurum</h5>
+                    <p id="totalKurum">10</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="info-card">
+                    <h5>Toplam Personel</h5>
+                    <p id="totalPersonel">50</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="info-card">
+                    <h5>Toplam Kart</h5>
+                    <p id="totalKart">30</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grafik Alanı -->
+        <div class="chart-container">
+
+            <canvas id="statisticsChart"></canvas>
+        </div>
+
+        <!-- Son Eklenen Kayıtlar -->
+        <h4 class="mt-5">Son Eklenen Kayıtlar</h4>
+        <ul id="recentRecords">
+            <!-- Buraya JS ile dinamik son eklenenler eklenecek -->
+        </ul>
+
+        <!-- Takvim Alanı -->
+        <div id="calendar"></div>
+        
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Personel Yönetimi. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                events: [
+                    {
+                        title: 'Örnek Etkinlik',
+                        start: '2025-03-27T10:00:00',
+                        end: '2025-03-27T12:00:00'
+                    },
+                    {
+                        title: 'Başka Bir Etkinlik',
+                        start: '2025-03-29T14:00:00',
+                        end: '2025-03-29T16:00:00'
+                    }
+                ]
+            });
+        });
+
+        // Grafik için örnek veriler
+        const ctx = document.getElementById('statisticsChart').getContext('2d');
+        const statisticsChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Kurumlar', 'Personeller', 'Kartlar'],
+                datasets: [{
+                    label: 'Son 1 Ayda Eklenen',
+                    data: [10, 50, 30], // Gerçek verilerle değiştirilebilir
+                    backgroundColor: ['#007bff', '#28a745', '#dc3545'],
+                    borderColor: ['#0056b3', '#218838', '#c82333'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            }
+        });
+
+        // Son Eklenen Kayıtlar
+        const recentRecords = [
+            'Kurum A ekledi.',
+            'Personel X işe başladı.',
+            'Kart Z oluşturuldu.'
+        ];
+
+        const recordList = $('#recentRecords');
+        recentRecords.forEach(record => {
+            recordList.append(`<li>${record}</li>`);
+        });
+
+    </script>
+
+</body>
+
+</html>

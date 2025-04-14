@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Personel Sil";
+}
+
+<h2>Personel Sil</h2>
+<form method="post" asp-action="personel_sil">
+    <div class="form-group">
+        <label for="personelId">Personel ID</label>
+        <!-- Personel ID için Guid türünü gönderiyoruz -->
+        <input type="text" class="form-control" id="personelId" name="personel_id" required />
+    </div>
+    <button type="submit" class="btn btn-danger">Sil</button>
+</form>

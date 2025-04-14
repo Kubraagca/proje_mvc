@@ -1,0 +1,178 @@
+﻿@model List<proje_mvc.Models.IzinModel>
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İzin Listesi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Genel Stil */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Tablo Stil */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+            table th, table td {
+                padding: 12px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+
+            table th {
+                background-color: #4CAF50;
+                color: white;
+            }
+
+            table tr:hover {
+                background-color: #f1f1f1;
+            }
+
+        /* Buton Stil */
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+
+            .btn:hover {
+                background-color: #45a049;
+            }
+
+        /* Arama Kutusu */
+        .search-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+            .search-container input[type="text"] {
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid #ddd;
+                width: 70%;
+                font-size: 16px;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>İzin Listesi</h2>
+
+        <!-- Arama Alanı -->
+        <div class="search-container">
+            <input type="text" id="izinSearch" placeholder="İzin türü, izin açıklama veya izin ID ile ara..." onkeyup="searchPersonel()" />
+        </div>
+
+        <a href="@Url.Action("izin_ekle", "Home")" class="btn btn-success">+ Yeni İzin Ekle</a>
+
+
+        <table id="mvc_izin_kayit">
+            <thead>
+                <tr><th> ID</th>
+                    <th>Personel ID</th>
+                    <th>İzin Başlangıç Tarihi</th>
+                    <th>İzin Bitiş Tarihi</th>
+                    <th>İzin Türü</th>
+                    <th>İzin Açıklama</th>
+                    <th>Kurum Id</th>
+                   
+                    <th>İşlem</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var izin in Model)
+                {
+                    <tr>
+                        <td>@izin.Id</td>
+                        <td>@izin.personel_id</td>
+                        <td>@izin.izin_baslangic_tarihi</td>
+                        <td>@izin.izin_bitis_tarihi</td>
+                        <td>@izin.izin_turu</td>
+                        <td>@izin.izin_aciklama</td>
+                        <td>@izin.kurum_id</td>
+                        <td>
+
+                            <form method="post" action="@Url.Action("izin_guncelle", "Home")">
+
+                                <input type="hidden" name="izin_id" value="@izin.izin_id" />
+                                <button type="submit" class="btn">Düzenle</button>
+                            </form>
+                            <form method="post" action="@Url.Action("izin_sil", "Home")">
+                                <input type="hidden" name="izin_id" value="@izin.izin_id" />
+                                <button type="submit" class="btn" style="background-color: #f44336;" onclick="return confirm('Bu izini silmek istediğinizden emin misiniz?');">
+                                    Sil
+                                </button>
+                            </form>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function searchIzın() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById('izinSearch');
+            filter = input.value.toUpperCase();
+            table = document.getElementById("mvc_izin_kayit");
+            tr = table.getElementsByTagName("tr");
+
+            // Arama işlemi her satır için yapılacak
+            for (i = 1; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td");
+                let match = false;
+
+                // Her sütunda arama yapalım
+                for (let j = 0; j < td.length; j++) {
+                    if (td[j]) {
+                        txtValue = td[j].textContent || td[j].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            match = true;
+                            break;
+                        }
+                    }
+                }
+
+                // Eğer bir eşleşme varsa, satırı göster
+                if (match) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

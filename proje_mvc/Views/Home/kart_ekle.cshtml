@@ -1,0 +1,25 @@
+﻿@model proje_mvc.Models.KartModel
+
+@{
+    ViewData["Title"] = "Kart Ekle";
+}
+
+
+<form method="post">
+    <div class="mb-3">
+        <label for="personel_id" class="form-label">Personel Id</label>
+        <input type="text" id="personel_id" name="personel_id" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label for="kayit_tarihi">Kayıt Tarihi</label>
+        <input type="date" class="form-control" id="kayit_tarihi" name="kayit_tarihi" value="@Model?.kayit_tarihi" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="kurum_id" class="form-label">Kurum Id</label>
+        <input type="text" id="kurum_id" name="kurum_id" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>

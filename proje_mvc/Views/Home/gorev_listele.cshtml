@@ -1,0 +1,170 @@
+﻿@model List<proje_mvc.Models.GorevModel>
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Görev Listesi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Genel Stil */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Tablo Stil */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+            table th, table td {
+                padding: 12px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+
+            table th {
+                background-color: #4CAF50;
+                color: white;
+            }
+
+            table tr:hover {
+                background-color: #f1f1f1;
+            }
+
+        /* Buton Stil */
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+        }
+
+            .btn:hover {
+                background-color: #45a049;
+            }
+
+        /* Arama Kutusu */
+        .search-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+            .search-container input[type="text"] {
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid #ddd;
+                width: 70%;
+                font-size: 16px;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Görev Listesi</h2>
+
+        <!-- Arama Alanı -->
+        <div class="search-container">
+            <input type="text" id="gorevSearch" placeholder="Görev adı, görev açıklama veya personel ID ile ara..." onkeyup="searchGorev()" />
+        </div>
+
+        <a href="@Url.Action("gorev_ekle", "Home")" class="btn">Yeni Görev Ekle</a>
+
+        <table id="mvc_gorev_kayit">
+            <thead>
+                <tr>
+                    <th> ID</th>
+                    <th>Personel ID</th>
+                    <th>Ad </th>
+                    <th>Soyad </th>
+                    <th>Görev Adı</th>
+                    <th>Görev Başlangıç Tarihi</th>
+                    <th>Görev Açıklama</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var gorev in Model)
+                {
+                    <tr>
+                        <td>@gorev.Id</td>
+                        <td>@gorev.personel_id</td>
+                         <td>@gorev.ad</td>
+                        <td>@gorev.soyad</td>
+                        <td>@gorev.gorev_adi</td>
+                        <td>@gorev.gorev_baslangic_tarihi?.ToString("dd/MM/yyyy")</td>
+                        <td>@gorev.gorev_aciklama</td>
+
+                        <td>
+                            <a href="@Url.Action("gorev_guncelle", "Home", new { id = gorev.gorev_id })" class="btn">Düzenle</a>
+                            <a href="@Url.Action("gorev_ekle", "Home", new { id = gorev.gorev_id })"
+                               class="btn" style="background-color: #f44336;"
+                               onclick="return confirm('Bu görevi silmek istediğinizden emin misiniz?');">Sil</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function searchGorev() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById('gorevSearch');
+            filter = input.value.toUpperCase();
+            table = document.getElementById("mvc_gorev_kayit");
+            tr = table.getElementsByTagName("tr");
+
+            // Arama işlemi her satır için yapılacak
+            for (i = 1; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td");
+                let match = false;
+
+                // Her sütunda arama yapalım
+                for (let j = 0; j < td.length; j++) {
+                    if (td[j]) {
+                        txtValue = td[j].textContent || td[j].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            match = true;
+                            break;
+                        }
+                    }
+                }
+
+                // Eğer bir eşleşme varsa, satırı göster
+                if (match) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿@model List<proje_mvc.Models.KartModel>
+
+@{
+    ViewData["Title"] = "Kart Listesi";
+}
+
+<h2>Kart Listesi</h2>
+<a href="@Url.Action("kart_listesi", "Home")" class="btn btn-success">Kart Listesini Görüntüle</a>
+
+<!-- Yeni Kart Ekle Butonu -->
+<a href="@Url.Action("kart_ekle", "Home")" class="btn btn-success">+ Yeni Kart Ekle</a>
+
+<table class="table table-striped mt-3">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Personel Id</th>
+            <th>Kayıt Tarihi</th>
+            <th>Kurum Id</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var kart in Model)
+        {
+            <tr>
+                <td>@kart.Id</td>
+                <td>@kart.personel_id</td>
+                <td>@kart.kayit_tarihi.ToString("yyyy-MM-dd")</td>
+                <td>@kart.kurum_id</td>
+                <td>
+                    <a href="@Url.Action("kart_guncelle", "Home", new { id = kart.kart_id })" class="btn btn-primary">Düzenle</a>
+                    <a href="@Url.Action("kart_sil", "Home", new { id = kart.kart_id })" class="btn btn-danger"
+                       onclick="return confirm('Bu kartı silmek istediğinizden emin misiniz?');">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

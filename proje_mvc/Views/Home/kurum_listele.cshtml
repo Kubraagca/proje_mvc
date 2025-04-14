@@ -1,0 +1,223 @@
+﻿@model List<proje_mvc.Models.KurumModel>
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurum Listesi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Form Stili */
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+            form label {
+                font-weight: bold;
+            }
+
+            form input {
+                padding: 10px;
+                width: 200px;
+                border-radius: 5px;
+                border: 1px solid #ddd;
+                font-size: 14px;
+            }
+
+            form button {
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+                form button:hover {
+                    background-color: #45a049;
+                }
+
+        .clear-btn {
+            background-color: #f44336;
+        }
+
+            .clear-btn:hover {
+                background-color: #d32f2f;
+            }
+
+        /* Tablo Stili */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+            table th, table td {
+                padding: 12px;
+                text-align: center;
+                border: 1px solid #ddd;
+            }
+
+            table th {
+                background-color: #4CAF50;
+                color: white;
+            }
+
+            table tbody tr:hover {
+                background-color: #f1f1f1;
+            }
+
+        /* Buton Stili */
+        .btn {
+            padding: 8px 14px;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 14px;
+            border: none;
+            display: inline-block;
+        }
+
+        .btn-danger {
+            background-color: #f44336;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+            .btn-danger:hover {
+                background-color: #d32f2f;
+            }
+
+        .btn-warning {
+            background-color: #ff9800;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+            .btn-warning:hover {
+                background-color: #fb8c00;
+            }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Kurum Listesi</h2>
+        <a href="@Url.Action("kurum_ekle", "Home")" class="btn btn-success">+ Yeni Kurum Ekle</a>
+
+        <!-- 🔎 Arama Formu -->
+        <form method="get" action="@Url.Action("kurum_listele")" id="searchForm">
+            <div>
+                <label for="searchId">Kurum ID:</label>
+                <input type="text" id="searchId" name="searchId" value="@Context.Request.Query["searchId"]" />
+            </div>
+
+            <div>
+                <label for="searchName">Kurum Adı:</label>
+                <input type="text" id="searchName" name="searchName" value="@Context.Request.Query["searchName"]" />
+            </div>
+
+            <div>
+                <label for="searchPhone">İletişim No:</label>
+                <input type="text" id="searchPhone" name="searchPhone" value="@Context.Request.Query["searchPhone"]" />
+            </div>
+
+            <button type="submit">Ara</button>
+            <button type="button" class="clear-btn" onclick="clearForm()">Temizle</button>
+        </form>
+
+        <!-- 📋 Kurum Listesi -->
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                       
+                        <th>Kurum Adı</th>
+                        <th>İletişim No</th>
+                        <th>Id</th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                <tbody>
+                        @foreach (var kurum in Model)
+                        {
+                        <tr>
+                          
+                            <td>@kurum.kurum_adi</td>
+                            <td>@kurum.iletisim_no</td>
+                            <td>@kurum.Id</td>
+                            <td>
+                                <form method="post" action="@Url.Action("kurum_sil", "Home")">
+                                    <input type="hidden" name="kurum_id" value="@kurum.kurum_id" />
+                                    <button type="submit" class="btn" style="background-color: #f44336;" onclick="return confirm('Bu kurum silmek istediğinizden emin misiniz?');">
+                                        Sil
+                                    </button>
+                                </form>
+
+                                <form method="post" action="@Url.Action("kurum_guncelle", "Home")">
+
+                                    <input type="hidden" name="kurum_id" value="@kurum.kurum_id" />
+                                    <button type="submit" class="btn">Düzenle</button>
+                                </form>
+
+                            </td>
+                        </tr>
+                        }
+                </tbody>
+
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // Form temizleme fonksiyonu
+        function clearForm() {
+            document.getElementById('searchForm').reset();
+            const url = new URL(window.location.href);
+            url.searchParams.delete('searchId');
+            url.searchParams.delete('searchName');
+            url.searchParams.delete('searchPhone');
+            window.history.replaceState({}, document.title, url.toString());
+        }
+
+        // Silme işlemi için onay fonksiyonu
+        function confirmDelete() {
+            return confirm("Bu kurumu silmek istediğinizden emin misiniz?");
+        }
+    </script>
+
+</body>
+</html>

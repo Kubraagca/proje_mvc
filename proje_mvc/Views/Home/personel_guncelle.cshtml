@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Personel Güncelle";
+}
+
+
+<div class="container">
+    <h2>Personel Bilgilerini Güncelle</h2>
+
+    <form method="post" action="@Url.Action("personel_guncelle", "Home")">
+
+        <input type="hidden" name="personel_id" value="@Model.personel_id" />
+
+        
+    <div class="form-group">
+        <label for="ad">Ad</label>
+        <input type="text" class="form-control" id="ad" name="Ad" />
+    </div>
+    <div class="form-group">
+        <label for="soyad">Soyad</label>
+        <input type="text" class="form-control" id="soyad" name="Soyad" />
+    </div>
+    <div class="form-group">
+        <label for="dogum_tarihi">Doğum Tarihi</label>
+        <input type="date" class="form-control" id="dogum_tarihi" name="dogum_tarihi" value="@Model.dogum_tarihi" required />
+    </div>
+        <div class="form-group">
+            <label for="adres">adres</label>
+            <input type="text" class="form-control" id="adres" name="adres" value="@Model.adres" required />
+        </div>
+    <div class="form-group">
+        <label for="telefon">Telefon</label>
+        <input type="text" class="form-control" id="telefon" name="Telefon" />
+    </div>
+        <div class="form-group">
+            <label for="TC">TC</label>
+            <input type="text" class="form-control" id="TC" name="TC" />
+        </div>
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+</form>

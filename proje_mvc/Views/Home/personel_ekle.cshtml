@@ -1,0 +1,135 @@
+﻿@model proje_mvc.Models.PersonelModel
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeni Personel Ekle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Genel Stil */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Form Stil */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-control {
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            button[type="submit"]:hover {
+                background-color: #45a049;
+            }
+
+        /* Buton ve inputların düzgün hizalanması */
+        .mb-3 {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="text-center">Yeni Personel Ekle</h2>
+        @Html.AntiForgeryToken()
+        <form method="post" action="@Url.Action("personel_ekle", "Home")" class="mt-4">
+            <!-- Ad -->
+            <div class="mb-3">
+                <label for="Ad" class="form-label">Ad</label>
+                <input type="text" id="Ad" name="Ad" class="form-control" value="@Model.ad" required />
+            </div>
+
+            <!-- Soyad -->
+            <div class="mb-3">
+                <label for="soyad" class="form-label">Soyad</label>
+                <input type="text" id="soyad" name="soyad" class="form-control" value="@Model.soyad" required />
+            </div>
+
+            <!-- Doğum Tarihi -->
+            <div class="mb-3">
+                <label for="dogum_tarihi" class="form-label">Doğum Tarihi</label>
+                <input type="date" id="dogum_tarihi" name="dogum_tarihi" class="form-control" value="@Model.dogum_tarihi" required />
+            </div>
+
+            <!-- İşe Başlama Tarihi -->
+            <div class="mb-3">
+                <label for="ise_baslama_tarihi" class="form-label">İşe Başlama Tarihi</label>
+                <input type="date" id="ise_baslama_tarihi" name="ise_baslama_tarihi" class="form-control" value="@Model.ise_baslama_tarihi" required />
+            </div>
+
+            <!-- Adres -->
+            <div class="mb-3">
+                <label for="adres" class="form-label">Adres</label>
+                <input type="text" id="adres" name="adres" class="form-control" value="@Model.adres" required />
+            </div>
+
+            <!-- TC -->
+            <div class="mb-3">
+                <label for="TC" class="form-label">TC Kimlik No</label>
+                <input type="text" id="TC" name="TC" class="form-control" value="@Model.TC" required maxlength="11" />
+            </div>
+
+            <!-- Telefon -->
+            <div class="mb-3">
+                <label for="telefon" class="form-label">Telefon</label>
+                <input type="tel" id="telefon" name="telefon" class="form-control" value="@Model.telefon" required />
+            </div>
+            <div class="mb-3">
+                <label for="kurum_id" class="form-label">Kurum Id</label>
+                <input type="text" id="kurum_id" name="kurum_id" class="form-control" value="@Model.kurum_id" required />
+            </div>
+            <div class="mb-3">
+                <label for="kart_id" class="form-label">Kart Id</label>
+                <input type="text" id="kart_id" name="kart_id" class="form-control" value="@Model.kart_id" required />
+            </div>
+
+            <!-- Kaydet Butonu -->
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        </form>
+    </div>
+
+</body>
+</html>

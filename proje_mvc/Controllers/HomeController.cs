@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using proje_mvc.Models;
 using System.Diagnostics;
+using System.ComponentModel.DataAnnotations;
 
 namespace proje_mvc.Controllers
 {
@@ -497,75 +498,78 @@ namespace proje_mvc.Controllers
 
             return View(gorev);
         }
-/*
-        [HttpPost]
-        public IActionResult guncelle_gorev(GorevModel gorev)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(gorev); // Model geçerli deðilse formu tekrar göster
-            }
-
-            var mevcutGorev = _context.mvc_gorev_kayit.FirstOrDefault(g => g.gorev_id == gorev.gorev_id);
-
-            if (mevcutGorev == null)
-            {
-                return NotFound(); // Eðer görev kaydý yoksa hata döndür
-            }
-
-            // Mevcut görev kaydýný güncelle
-            mevcutGorev.gorev_adi = gorev.gorev_adi;
-            mevcutGorev.gorev_aciklama = gorev.gorev_aciklama;
-            mevcutGorev.gorev_baslangic_tarihi = gorev.gorev_baslangic_tarihi;
-            mevcutGorev.personel_id = gorev.personel_id;
-
-            _context.SaveChanges(); // Deðiþiklikleri kaydet
-
-            return RedirectToAction("gorev_listele"); // Güncellendikten sonra liste sayfasýna yönlendir
-        }
-
-          public class AuthController : Controller
-        {
-            private readonly ILogger<AuthController> _logger;
-            private readonly ProjeDbContext _context;
-
-
-
-
-
-            public AuthController(ILogger<AuthController> logger, ProjeDbContext context)
-            {
-                _logger = logger;
-                _context = context;
-            }
-
-            [HttpGet]
-            public IActionResult Giris()
-            {
-                return View();
-            }
-
-            [HttpPost]
-            [ValidateAntiForgeryToken]
-            public IActionResult Giris(KullaniciModel model)
-            {
-                if (ModelState.IsValid)
+        /*
+                [HttpPost]
+                public IActionResult guncelle_gorev(GorevModel gorev)
                 {
-                    var user = _context.mvc_kullanici_giris
-                        .FirstOrDefault(u => u.kullanici_adi == model.kullanici_adi && u.sifre == model.sifre);
-                    if (user != null)
+                    if (!ModelState.IsValid)
                     {
-                        HttpContext.Session.SetString("kullanici_adi", model.kullanici_adi);
-                        return RedirectToAction("Index", "Home");
+                        return View(gorev); // Model geçerli deðilse formu tekrar göster
                     }
-                    else
+
+                    var mevcutGorev = _context.mvc_gorev_kayit.FirstOrDefault(g => g.gorev_id == gorev.gorev_id);
+
+                    if (mevcutGorev == null)
                     {
-                        ViewData["ErrorMessage"] = "Geçersiz kullanýcý adý veya þifre.";
+                        return NotFound(); // Eðer görev kaydý yoksa hata döndür
                     }
+
+                    // Mevcut görev kaydýný güncelle
+                    mevcutGorev.gorev_adi = gorev.gorev_adi;
+                    mevcutGorev.gorev_aciklama = gorev.gorev_aciklama;
+                    mevcutGorev.gorev_baslangic_tarihi = gorev.gorev_baslangic_tarihi;
+                    mevcutGorev.personel_id = gorev.personel_id;
+
+                    _context.SaveChanges(); // Deðiþiklikleri kaydet
+
+                    return RedirectToAction("gorev_listele"); // Güncellendikten sonra liste sayfasýna yönlendir
                 }
-                return View(model);
-            }
-        }*/
+
+                  public class AuthController : Controller
+                {
+                    private readonly ILogger<AuthController> _logger;
+                    private readonly ProjeDbContext _context;
+
+
+
+
+
+                    public AuthController(ILogger<AuthController> logger, ProjeDbContext context)
+                    {
+                        _logger = logger;
+                        _context = context;
+                    }
+
+                    [HttpGet]
+                    public IActionResult Giris()
+                    {
+                        return View();
+                    }
+
+                    [HttpPost]
+                    [ValidateAntiForgeryToken]
+                    public IActionResult Giris(KullaniciModel model)
+                    {
+                        if (ModelState.IsValid)
+                        {
+                            var user = _context.mvc_kullanici_giris
+                                .FirstOrDefault(u => u.kullanici_adi == model.kullanici_adi && u.sifre == model.sifre);
+                            if (user != null)
+                            {
+                                HttpContext.Session.SetString("kullanici_adi", model.kullanici_adi);
+                                return RedirectToAction("Index", "Home");
+                            }
+                            else
+                            {
+                                ViewData["ErrorMessage"] = "Geçersiz kullanýcý adý veya þifre.";
+                            }
+                        }
+                        return View(model);
+                    }
+                }*/
+       
+            
+
     }
 }
 

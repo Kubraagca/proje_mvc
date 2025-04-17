@@ -7,24 +7,52 @@
       "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\models\\personelmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\models\\personelmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\models\\kurummodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\models\\kurummodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\controllers\\kurumconroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\controllers\\kurumconroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\models\\projedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\models\\projedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\models\\kullanicimodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\models\\kullanicimodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\controllers\\kurumconroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\controllers\\kurumconroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\giris.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\giris.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\kart_ekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\kart_ekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\personel_ekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\personel_ekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\models\\personelmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\models\\personelmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\kurum_listele.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -35,36 +63,12 @@
       "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\giris.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\giris.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\models\\kullanicimodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\models\\kullanicimodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\personel_ekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\personel_ekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\personel_listele.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\personel_listele.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -135,10 +139,6 @@
       "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\kart_sil.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\kart_ekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\kart_ekle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\personel_guncelle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\views\\home\\personel_guncelle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
@@ -164,59 +164,22 @@
               "RelativeDocumentMoniker": "proje_mvc\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Controllers\\HomeController.cs",
               "RelativeToolTip": "proje_mvc\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAMwCQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAOoBAAAAAAAAAAAowC4CAABkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-14T10:53:32.32Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "personel_listele.cshtml",
-              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\personel_listele.cshtml",
-              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\personel_listele.cshtml",
-              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\personel_listele.cshtml",
-              "RelativeToolTip": "proje_mvc\\Views\\Home\\personel_listele.cshtml",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAAAIgAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-29T18:35:41.897Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "personel_ekle.cshtml",
-              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\personel_ekle.cshtml",
-              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\personel_ekle.cshtml",
-              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\personel_ekle.cshtml",
-              "RelativeToolTip": "proje_mvc\\Views\\Home\\personel_ekle.cshtml",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAAwIcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-08T08:52:08.429Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "KurumModel.cs",
-              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\KurumModel.cs",
-              "RelativeDocumentMoniker": "proje_mvc\\Models\\KurumModel.cs",
-              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\KurumModel.cs",
-              "RelativeToolTip": "proje_mvc\\Models\\KurumModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T08:47:11.757Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Program.cs",
-              "RelativeDocumentMoniker": "proje_mvc\\Program.cs",
-              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Program.cs",
-              "RelativeToolTip": "proje_mvc\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Title": "KullaniciModel.cs",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\KullaniciModel.cs",
+              "RelativeDocumentMoniker": "proje_mvc\\Models\\KullaniciModel.cs",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\KullaniciModel.cs",
+              "RelativeToolTip": "proje_mvc\\Models\\KullaniciModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T10:24:43.277Z",
+              "WhenOpened": "2025-04-08T09:29:19.569Z",
               "EditorCaption": ""
             },
             {
@@ -227,27 +190,40 @@
               "RelativeDocumentMoniker": "proje_mvc\\Models\\ProjeDbContext.cs",
               "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\ProjeDbContext.cs",
               "RelativeToolTip": "proje_mvc\\Models\\ProjeDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-08T09:40:59.753Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PersonelModel.cs",
-              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\PersonelModel.cs",
-              "RelativeDocumentMoniker": "proje_mvc\\Models\\PersonelModel.cs",
-              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\PersonelModel.cs",
-              "RelativeToolTip": "proje_mvc\\Models\\PersonelModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T08:47:35.736Z",
+              "DocumentIndex": 6,
+              "Title": "Giris.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\Giris.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\Giris.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\Giris.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Home\\Giris.cshtml",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAAAFEAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T09:34:07.438Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Program.cs",
+              "RelativeDocumentMoniker": "proje_mvc\\Program.cs",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Program.cs",
+              "RelativeToolTip": "proje_mvc\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T10:24:43.277Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "KurumConroller.cs",
               "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Controllers\\KurumConroller.cs",
               "RelativeDocumentMoniker": "proje_mvc\\Controllers\\KurumConroller.cs",
@@ -260,67 +236,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Giris.cshtml",
-              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\Giris.cshtml",
-              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\Giris.cshtml",
-              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\Giris.cshtml",
-              "RelativeToolTip": "proje_mvc\\Views\\Home\\Giris.cshtml",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAowFQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-08T09:34:07.438Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "KullaniciModel.cs",
-              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\KullaniciModel.cs",
-              "RelativeDocumentMoniker": "proje_mvc\\Models\\KullaniciModel.cs",
-              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\KullaniciModel.cs",
-              "RelativeToolTip": "proje_mvc\\Models\\KullaniciModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "KurumModel.cs",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\KurumModel.cs",
+              "RelativeDocumentMoniker": "proje_mvc\\Models\\KurumModel.cs",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\KurumModel.cs",
+              "RelativeToolTip": "proje_mvc\\Models\\KurumModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T09:29:19.569Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "kurum_listele.cshtml",
-              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\kurum_listele.cshtml",
-              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\kurum_listele.cshtml",
-              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\kurum_listele.cshtml",
-              "RelativeToolTip": "proje_mvc\\Views\\Home\\kurum_listele.cshtml",
-              "ViewState": "AgIAAJMAAAAAAAAAAAAAAKcAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-08T08:48:48.942Z"
+              "WhenOpened": "2025-04-08T08:47:11.757Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Privacy.cshtml",
-              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\Privacy.cshtml",
-              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\Privacy.cshtml",
-              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\Privacy.cshtml",
-              "RelativeToolTip": "proje_mvc\\Views\\Home\\Privacy.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "kart_ekle.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\kart_ekle.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\kart_ekle.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\kart_ekle.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Home\\kart_ekle.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-08T10:54:04.906Z"
+              "WhenOpened": "2025-03-29T18:07:24.618Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "proje_mvc\\Views\\_ViewImports.cshtml",
-              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "proje_mvc\\Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-08T09:38:17.833Z"
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\appsettings.json",
+              "RelativeDocumentMoniker": "proje_mvc\\appsettings.json",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\appsettings.json",
+              "RelativeToolTip": "proje_mvc\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAB9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-08T09:37:39.024Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 10,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "proje_mvc\\Views\\_ViewStart.cshtml",
@@ -332,7 +286,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 9,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\appsettings.Development.json",
               "RelativeDocumentMoniker": "proje_mvc\\appsettings.Development.json",
@@ -345,6 +299,78 @@
             {
               "$type": "Document",
               "DocumentIndex": 12,
+              "Title": "PersonelModel.cs",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\PersonelModel.cs",
+              "RelativeDocumentMoniker": "proje_mvc\\Models\\PersonelModel.cs",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\PersonelModel.cs",
+              "RelativeToolTip": "proje_mvc\\Models\\PersonelModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T08:47:35.736Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "personel_ekle.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\personel_ekle.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\personel_ekle.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\personel_ekle.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Home\\personel_ekle.cshtml",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAwIcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T08:52:08.429Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "personel_listele.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\personel_listele.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\personel_listele.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\personel_listele.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Home\\personel_listele.cshtml",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAAAIgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-29T18:35:41.897Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "kurum_listele.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\kurum_listele.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\kurum_listele.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\kurum_listele.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Home\\kurum_listele.cshtml",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAAAKcAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T08:48:48.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T10:54:04.906Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "proje_mvc\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "proje_mvc\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-08T09:38:17.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "additional-methods.js",
               "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
               "RelativeDocumentMoniker": "proje_mvc\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
@@ -356,7 +382,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "proje_mvc\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -368,7 +394,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "proje_mvc\\Views\\Shared\\_Layout.cshtml",
@@ -380,19 +406,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\appsettings.json",
-              "RelativeDocumentMoniker": "proje_mvc\\appsettings.json",
-              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\appsettings.json",
-              "RelativeToolTip": "proje_mvc\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-08T09:37:39.024Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "GorevModel.cs",
               "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\GorevModel.cs",
               "RelativeDocumentMoniker": "proje_mvc\\Models\\GorevModel.cs",
@@ -404,7 +418,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "IzinModel.cs",
               "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\IzinModel.cs",
               "RelativeDocumentMoniker": "proje_mvc\\Models\\IzinModel.cs",
@@ -416,7 +430,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "gorev_ekle.cshtml",
               "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\gorev_ekle.cshtml",
               "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\gorev_ekle.cshtml",
@@ -428,7 +442,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "gorev_listele.cshtml",
               "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\gorev_listele.cshtml",
               "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\gorev_listele.cshtml",
@@ -440,7 +454,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "gorev_guncelle.cshtml",
               "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\gorev_guncelle.cshtml",
               "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\gorev_guncelle.cshtml",
@@ -452,7 +466,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "KartModel.cs",
               "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\KartModel.cs",
               "RelativeDocumentMoniker": "proje_mvc\\Models\\KartModel.cs",
@@ -464,7 +478,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "izin_ekle.cshtml",
               "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\izin_ekle.cshtml",
               "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\izin_ekle.cshtml",
@@ -476,7 +490,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "izin_guncelle.cshtml",
               "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\izin_guncelle.cshtml",
               "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\izin_guncelle.cshtml",
@@ -488,7 +502,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "kart_sil.cshtml",
               "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\kart_sil.cshtml",
               "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\kart_sil.cshtml",
@@ -500,7 +514,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "personel_sil.cshtml",
               "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\personel_sil.cshtml",
               "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\personel_sil.cshtml",
@@ -512,7 +526,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "kurum_ekle.cshtml",
               "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\kurum_ekle.cshtml",
               "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\kurum_ekle.cshtml",
@@ -524,7 +538,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "izin_listele.cshtml",
               "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\izin_listele.cshtml",
               "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\izin_listele.cshtml",
@@ -533,18 +547,6 @@
               "ViewState": "AgIAAGkAAAAAAAAAAAAuwIUAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-03-29T18:14:46.595Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "kart_ekle.cshtml",
-              "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\kart_ekle.cshtml",
-              "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\kart_ekle.cshtml",
-              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\kart_ekle.cshtml",
-              "RelativeToolTip": "proje_mvc\\Views\\Home\\kart_ekle.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-29T18:07:24.618Z"
             },
             {
               "$type": "Document",
@@ -560,7 +562,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "kart_listesi.cshtml",
               "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\kart_listesi.cshtml",
               "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\kart_listesi.cshtml",
@@ -572,7 +574,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "kart_guncelle.cshtml",
               "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Views\\Home\\kart_guncelle.cshtml",
               "RelativeDocumentMoniker": "proje_mvc\\Views\\Home\\kart_guncelle.cshtml",

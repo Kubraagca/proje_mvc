@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\models\\projedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\models\\projedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\controllers\\kurumconroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\controllers\\kurumconroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|solutionrelative:proje_mvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C065453C-0A9F-4F70-BC89-D41B22289EB6}|proje_mvc\\proje_mvc.csproj|c:\\users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\views\\home\\giris.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -150,7 +150,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -162,15 +162,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "proje_mvc\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "proje_mvc\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAH0BAAAAAAAAAAAgwJABAAAZAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Controllers\\HomeController.cs*",
+              "RelativeToolTip": "proje_mvc\\Controllers\\HomeController.cs*",
+              "ViewState": "AgIAAKUAAAAAAAAAAAAgwMkAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T10:53:32.32Z"
+              "WhenOpened": "2024-12-14T10:53:32.32Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -186,7 +187,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ProjeDbContext.cs",
               "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Models\\ProjeDbContext.cs",
               "RelativeDocumentMoniker": "proje_mvc\\Models\\ProjeDbContext.cs",
@@ -223,7 +224,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "KurumConroller.cs",
               "DocumentMoniker": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\Controllers\\KurumConroller.cs",
               "RelativeDocumentMoniker": "proje_mvc\\Controllers\\KurumConroller.cs",

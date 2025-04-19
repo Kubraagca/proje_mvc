@@ -199,7 +199,7 @@ namespace proje_mvc.Controllers
             _context.SaveChanges();
 
             // Güncellenen veriyi listeleme sayfasýna yönlendir
-            return RedirectToAction("kurum_listele");
+            return RedirectToAction("personel_listele");
         }
 
 

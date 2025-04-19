@@ -10,9 +10,7 @@ namespace proje_mvc.Models
         }
 
         public ProjeDbContext(DbContextOptions<ProjeDbContext> options) : base(options) { }
-     
 
-        // Veritabanındaki tabloları temsil eden DbSet'ler
         public DbSet<PersonelModel> mvc_personel_kayit { get; set; }
         public DbSet<KurumModel> mvc_kurum_kayit { get; set; }
         public DbSet<KartModel> mvc_kart_kayit { get; set; }
@@ -22,7 +20,7 @@ namespace proje_mvc.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured) // Eğer konfigüre edilmemişse
+            if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer("Data Source=94.73.144.8;Initial Catalog=u6699064_db601;Persist Security Info=True;User ID=u6699064_user601;Password=:4Rbp3=4_9F:AwJr;TrustServerCertificate=True");
             }

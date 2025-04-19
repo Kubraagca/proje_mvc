@@ -7513,23 +7513,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kkubr\\.nuget\\packages\\": {},
+    "C:\\Users\\salih\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\proje_mvc.csproj",
+      "projectUniqueName": "C:\\Users\\salih\\Source\\Repos\\proje_mvc_s\\proje_mvc\\proje_mvc.csproj",
       "projectName": "proje_mvc",
-      "projectPath": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\proje_mvc.csproj",
-      "packagesPath": "C:\\Users\\kkubr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\obj\\",
+      "projectPath": "C:\\Users\\salih\\Source\\Repos\\proje_mvc_s\\proje_mvc\\proje_mvc.csproj",
+      "packagesPath": "C:\\Users\\salih\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\salih\\Source\\Repos\\proje_mvc_s\\proje_mvc\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\kkubr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\salih\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -7556,7 +7556,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -7594,7 +7595,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -17,123 +17,125 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = proje_mvc
 build_property.RootNamespace = proje_mvc
-build_property.ProjectDir = C:\Users\kkubr\source\repos\proje_mvc\proje_mvc\
+build_property.ProjectDir = C:\Users\salih\source\repos\proje_mvc_s\proje_mvc\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\kkubr\source\repos\proje_mvc\proje_mvc
+build_property.MSBuildProjectDirectory = C:\Users\salih\source\repos\proje_mvc_s\proje_mvc
 build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Home/Giris.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Home/Giris.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxHaXJpcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Home/gorev_ekle.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Home/gorev_ekle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxnb3Jldl9la2xlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Home/gorev_guncelle.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Home/gorev_guncelle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxnb3Jldl9ndW5jZWxsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Home/gorev_listele.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Home/gorev_listele.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxnb3Jldl9saXN0ZWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Home/gorev_sil.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Home/gorev_sil.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxnb3Jldl9zaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Home/Index.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Home/izin_ekle.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Home/izin_ekle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxpemluX2VrbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Home/izin_guncelle.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Home/izin_guncelle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxpemluX2d1bmNlbGxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Home/izin_listele.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Home/izin_listele.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxpemluX2xpc3RlbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Home/izin_sil.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Home/izin_sil.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxpemluX3NpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Home/kart_ekle.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Home/kart_ekle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxrYXJ0X2VrbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Home/kart_guncelle.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Home/kart_guncelle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxrYXJ0X2d1bmNlbGxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Home/kart_listesi.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Home/kart_listesi.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxrYXJ0X2xpc3Rlc2kuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Home/kart_sil.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Home/kart_sil.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxrYXJ0X3NpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Home/kurum_ekle.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Home/kurum_ekle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxrdXJ1bV9la2xlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Home/kurum_guncelle.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Home/kurum_guncelle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxrdXJ1bV9ndW5jZWxsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Home/kurum_listele.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Home/kurum_listele.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxrdXJ1bV9saXN0ZWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Home/kurum_sil.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Home/kurum_sil.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxrdXJ1bV9zaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Home/personel_ekle.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Home/personel_ekle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxwZXJzb25lbF9la2xlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Home/personel_guncelle.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Home/personel_guncelle.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxwZXJzb25lbF9ndW5jZWxsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Home/personel_listele.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Home/personel_listele.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxwZXJzb25lbF9saXN0ZWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Home/personel_sil.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Home/personel_sil.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxwZXJzb25lbF9zaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Home/Privacy.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Shared/Error.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/_ViewImports.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/_ViewStart.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/kkubr/source/repos/proje_mvc/proje_mvc/Views/Shared/_Layout.cshtml]
+[C:/Users/salih/source/repos/proje_mvc_s/proje_mvc/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-66j1dcz0d1

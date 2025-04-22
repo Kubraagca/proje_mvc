@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace proje_mvc.Models
 {
+    [Table("mvc_kullanici_giris")]
     public class KullaniciModel
     {
         [Key]

@@ -1,45 +1,22 @@
-﻿@model IzinModel
+﻿@model proje_mvc.Models.KartModel
 
-<h2>İzin Güncelle</h2>
+<form asp-action="kart_guncelle" method="post">
+    <input type="hidden" name="kart_id" value="@Model.kart_id" />
 
-<form method="post" asp-action="guncelle_izin">
-    <input type="hidden" asp-for="izin_id" />
-
-    <div class="form-group">
-        <label for="personel_id">Personel ID</label>
-        <input type="text" class="form-control" asp-for="personel_id" readonly />
+    <div>
+        <label>Kurum ID</label>
+        <input type="text" name="kurum_id" value="@Model.kurum_id" />
     </div>
 
-    <div class="form-group">
-        <label for="izin_baslangic_tarihi">İzin Başlangıç Tarihi</label>
-        <input type="date" class="form-control" asp-for="izin_baslangic_tarihi" required />
+    <div>
+        <label>Personel ID</label>
+        <input type="text" name="personel_id" value="@Model.personel_id" />
     </div>
 
-    <div class="form-group">
-        <label for="izin_bitis_tarihi">İzin Bitiş Tarihi</label>
-        <input type="date" class="form-control" asp-for="izin_bitis_tarihi" required />
+    <div>
+        <label>Kayıt Tarihi</label>
+        <input type="date" name="kayit_tarihi" value="@Model.kayit_tarihi.ToString("yyyy-MM-dd")" />
     </div>
 
-    <div class="form-group">
-        <label for="izin_turu">İzin Türü</label>
-        <select class="form-control" asp-for="izin_turu" required>
-            <option value="Yıllık İzin">Yıllık İzin</option>
-            <option value="Hastalık İzni">Hastalık İzni</option>
-            <option value="Ücretli İzin">Ücretli İzin</option>
-            <option value="Babalık İzni">Babalık İzni</option>
-            <option value="Doğum İzni">Doğum İzni</option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label for="izin_aciklama">İzin Açıklama</label>
-        <input type="text" class="form-control" asp-for="izin_aciklama" required />
-    </div>
-
-    <div class="form-group">
-        <label for="kurum_id">Kurum ID</label>
-        <input type="text" class="form-control" asp-for="kurum_id" readonly />
-    </div>
-
-    <button type="submit" class="btn btn-primary">Güncelle</button>
+    <button type="submit">Güncelle</button>
 </form>

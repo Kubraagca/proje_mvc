@@ -1,5 +1,37 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model proje_mvc.Models.GorevModel
+
 @{
+    ViewData["Title"] = "Görev Güncelle";
 }
+
+<h2>Görev Güncelle</h2>
+
+<form asp-action="gorev_guncelle" asp-controller="Home" method="post">
+    <input type="hidden" name="gorev_id" value="@Model.gorev_id" />
+    <div>
+        <label>Personel ID</label>
+        <input type="number" name="personel_id" value="@Model.personel_id" class="form-control" />
+    </div>
+    <div>
+        <label>Ad</label>
+        <input type="text" name="ad" value="@Model.ad" class="form-control" />
+    </div>
+    <div>
+        <label>Soyad</label>
+        <input type="text" name="soyad" value="@Model.soyad" class="form-control" />
+    </div>
+    <div>
+        <label>Görev Adı</label>
+        <input type="text" name="gorev_adi" value="@Model.gorev_adi" class="form-control" />
+    </div>
+    <div>
+        <label>Görev Açıklama</label>
+        <textarea name="gorev_aciklama" class="form-control">@Model.gorev_aciklama</textarea>
+    </div>
+    <div>
+        <label>Başlangıç Tarihi</label>
+        <input type="date" name="gorev_baslangic_tarihi" value="@Model.gorev_baslangic_tarihi?.ToString("yyyy-MM-dd")" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>

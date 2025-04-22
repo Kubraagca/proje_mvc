@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Takvim ve İstatistikler</title>
+
+    <!-- FullCalendar CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.css" rel="stylesheet" />
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    <!-- FullCalendar JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        #calendar {
+            width: 100%;
+            max-width: 750px;
+            margin: 30px auto;
+        }
+
+        /* Takvim düzeni */
+        .fc {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        /* Hero Bölümü */
+        .hero-section {
+            background-color: #6c5b7b;
+            padding: 40px;
+            color: white;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+            .hero-section h3 {
+                margin-top: 10px;
+                font-size: 2rem;
+                font-weight: bold;
+            }
+
+            .hero-section .btn-login {
+                padding: 12px 25px;
+                font-size: 1.1rem;
+                background-color: #f7b731;
+                border-radius: 30px;
+                color: white;
+                text-decoration: none;
+                margin-top: 20px;
+                display: inline-block;
+                transition: background-color 0.3s ease;
+            }
+
+                .hero-section .btn-login:hover {
+                    background-color: #e67e22;
+                }
+
+        /* İstatistikler */
+        .info-card {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+            .info-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .info-card h5 {
+                margin-bottom: 12px;
+                font-size: 1.1rem;
+                color: #555;
+            }
+
+            .info-card p {
+                font-size: 2rem;
+                font-weight: bold;
+                color: #333;
+            }
+
+        /* Center wrapper for content */
+        .center-wrapper {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 30px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            padding: 15px;
+        }
+
+        /* Grafik Container */
+        .chart-container {
+            margin-top: 40px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Küçük Giriş Yap Butonu ve Logo Alanı -->
+    <div class="hero-section">
+        <h3>Personel Yönetimi</h3>
+        <a href="/home/Giris" class="btn-login">Giriş Yap</a>
+    </div>
+
+    <div class="center-wrapper">
+        <div class="container">
+            <!-- İstatistikler -->
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="info-card">
+                        <h5>Toplam Kurum</h5>
+                        <p id="totalKurum">0</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="info-card">
+                        <h5>Toplam Personel</h5>
+                        <p id="totalPersonel">0</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="info-card">
+                        <h5>Toplam Kart</h5>
+                        <p id="totalKart">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Takvim -->
+            <div>
+                <h4>Takvim</h4>
+                <div id="calendar"></div>
+            </div>
+
+            <!-- Grafik -->
+            <div class="chart-container">
+                <h4>İstatistikler</h4>
+                <canvas id="statisticsChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Takvim
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                events: [
+                    {
+                        title: 'Örnek Etkinlik',
+                        start: '2025-03-27T10:00:00',
+                        end: '2025-03-27T12:00:00'
+                    },
+                    {
+                        title: 'Başka Bir Etkinlik',
+                        start: '2025-03-29T14:00:00',
+                        end: '2025-03-29T16:00:00'
+                    }
+                ]
+            });
+
+            // İstatistik Verisi (Veritabanından dinamik olarak alabilirsiniz)
+            const totalKurum = 10;
+            const totalPersonel = 50;
+            const totalKart = 30;
+
+            // İstatistikleri Güncelleme
+            $('#totalKurum').text(totalKurum);
+            $('#totalPersonel').text(totalPersonel);
+            $('#totalKart').text(totalKart);
+
+            // Grafik
+            const ctx = document.getElementById('statisticsChart').getContext('2d');
+            const statisticsChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Kurumlar', 'Personeller', 'Kartlar'],
+                    datasets: [{
+                        label: 'Son 1 Ayda Eklenen',
+                        data: [totalKurum, totalPersonel, totalKart],
+                        backgroundColor: ['#007bff', '#28a745', '#dc3545'],
+                        borderColor: ['#0056b3', '#218838', '#c82333'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'top' }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: { stepSize: 10 }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+
+    <footer>
+        <p>&copy; 2025 Personel Yönetimi</p>
+    </footer>
+
+</body>
+</html>

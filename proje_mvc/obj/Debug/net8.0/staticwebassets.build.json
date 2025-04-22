@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "k8Ohe62ooWnuaN+8i5UbXKo9poYnZ0/gMizUqww8wuI=",
+  "Hash": "r8H5ikTYedC2TulVrj7E5xzaB6Z4/dNk6LcWvqQUgUs=",
   "Source": "proje_mvc",
   "BasePath": "_content/proje_mvc",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\wwwroot\\images\\logo.png",
+      "SourceId": "proje_mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\wwwroot\\",
+      "BasePath": "_content/proje_mvc",
+      "RelativePath": "images/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logo.png"
     },
     {
       "Identity": "C:\\Users\\kkubr\\source\\repos\\proje_mvc\\proje_mvc\\wwwroot\\js\\site.js",

@@ -133,7 +133,7 @@
 
     <div class="container">
         <h2>Kurum Listesi</h2>
-        <a href="@Url.Action("kurum_ekle", "Home")" class="btn btn-success">+ Yeni Kurum Ekle</a>
+   
 
         <!-- 🔎 Arama Formu -->
         <form method="get" action="@Url.Action("kurum_listele")" id="searchForm">
@@ -178,18 +178,22 @@
                             <td>@kurum.iletisim_no</td>
                             <td>@kurum.Id</td>
                             <td>
-                                <form method="post" action="@Url.Action("kurum_sil", "Home")">
+                            <td>
+                                <form method="get" action="@Url.Action("kurum_guncelle", "Home")" style="display:inline;">
                                     <input type="hidden" name="kurum_id" value="@kurum.kurum_id" />
-                                    <button type="submit" class="btn" style="background-color: #f44336;" onclick="return confirm('Bu kurum silmek istediğinizden emin misiniz?');">
-                                        Sil
+                                    <button type="submit" class="btn btn-warning">
+                                        <i class="fas fa-edit"></i> Güncelle
                                     </button>
                                 </form>
 
-                                <form method="post" action="@Url.Action("kurum_guncelle", "Home")">
-
+                                <form method="post" action="@Url.Action("kurum_sil", "Home")" style="display:inline;">
                                     <input type="hidden" name="kurum_id" value="@kurum.kurum_id" />
-                                    <button type="submit" class="btn">Düzenle</button>
+                                    <button type="submit" class="btn btn-danger" onclick="return confirm('Silmek istediğinizden emin misiniz?');">
+                                        <i class="fas fa-trash-alt"></i> Sil
+                                    </button>
                                 </form>
+                            </td>
+
 
                             </td>
                         </tr>

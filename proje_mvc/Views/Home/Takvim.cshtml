@@ -1,0 +1,80 @@
+﻿@model List<proje_mvc.Models.TakvimModel>
+
+@{
+    ViewData["Title"] = "Takvim ve Etkinlikler"; 
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.css" />
+    <style>
+        /* Basit stil */
+        .container {
+            margin: 20px;
+        }
+        .etkinlik {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #f4f4f4;
+            border-radius: 5px;
+        }
+        .etkinlik h3 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .etkinlik p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>@ViewData["Title"]</h1>
+        
+        <!-- Takvim Bölümü -->
+        <div id="calendar"></div>
+
+        <h2>Etkinlikler</h2>
+        <!-- Etkinlik Listesi -->
+        @foreach (var etkinlik in Model)
+        {
+            <div class="etkinlik">
+                <h3>@etkinlik.etkinlik_adi</h3>
+                <p><strong>Tarih:</strong> @(etkinlik.etkinlik_tarihi?.ToString("dd/MM/yyyy"))</p>
+
+                
+            
+            </div>
+        }
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.2.0/dist/fullcalendar.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Takvimi başlatma
+            $('#calendar').fullCalendar({
+                events: [
+        @foreach (var etkinlik in Model)
+        {
+            <text>
+                            {
+                                title: '@etkinlik.etkinlik_adi',
+                            start: '@etkinlik.etkinlik_tarihi?.ToString("yyyy-MM-dd")'
+                    },
+            </text>
+        }
+            // Son elemandan sonra virgül koymayın.
+        ],
+                eventClick: function(event) {
+                    alert('Etkinlik: ' + event.title + '\nAçıklama: ' + event.description);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

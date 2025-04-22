@@ -28,14 +28,39 @@ namespace proje_mvc.Controllers
             return View();
         }
 
-        public IActionResult index()
+        public IActionResult Index()
+        {
+            // Burada gerekirse ViewBag ile veri geçilebilir
+            // ViewBag.TotalKurum = 10;
+            // ViewBag.TotalPersonel = 50;
+            // ViewBag.TotalKart = 30;
+
+            return View("Anasayfa"); // cshtml dosya adý bu
+        }
+
+        public IActionResult Giris()
         {
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Giris(string kullaniciAdi, string sifre)
+        {
+            // Basit örnek giriþ kontrolü
+            if (kullaniciAdi == "admin" && sifre == "123")
+            {
+                return RedirectToAction("Index", "Home");
+            }
 
+            ViewBag.Hata = "Kullanýcý adý veya þifre hatalý.";
+            return View();
+        }
+        public IActionResult kurum_ekle()
+        {
+            return View(); // View için bir model göndermiyorsanýz, sadece boþ bir view döndürüyoruz
+        }
 
-
+        [HttpPost] // POST metodunu belirtmek için [HttpPost] ekliyoruz
         public IActionResult kurum_ekle(KurumModel kurum)
         {
             if (ModelState.IsValid)
@@ -43,10 +68,18 @@ namespace proje_mvc.Controllers
                 kurum.kurum_id = Guid.NewGuid(); // Yeni bir GUID oluþtur
                 _context.mvc_kurum_kayit.Add(kurum);
                 _context.SaveChanges();
-                return RedirectToAction("kurum_listele");
+                return RedirectToAction("kurum_listele"); // Kayýt sonrasý listeleme sayfasýna yönlendir
             }
-            return View(kurum);
+
+            // ModelState hatalarýný konsola yazdýr
+            foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+            {
+                Console.WriteLine(error.ErrorMessage);
+            }
+
+            return View(kurum); // Eðer model geçerli deðilse, formu tekrar göster
         }
+
 
 
         [HttpPost]
@@ -65,43 +98,43 @@ namespace proje_mvc.Controllers
 
 
 
+        [HttpGet]
         public IActionResult kurum_guncelle(Guid kurum_id)
         {
             var kurum = _context.mvc_kurum_kayit.FirstOrDefault(k => k.kurum_id == kurum_id);
-
             if (kurum == null)
             {
-                return NotFound(); // Eðer kurum bulunamazsa
+                return NotFound();
             }
 
-            return View(kurum); // Kurumu View'a gönder
+            return View(kurum); // Güncelleme formuna gönder
         }
+
 
 
 
         [HttpPost]
-        public IActionResult guncelle_kurum(KurumModel kurum)
+        public IActionResult kurum_guncelle(KurumModel model)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return View(kurum); // Model geçerli deðilse, güncellenen verileri geri gönder
+                var mevcut = _context.mvc_kurum_kayit.FirstOrDefault(k => k.kurum_id == model.kurum_id);
+                if (mevcut == null)
+                    return NotFound();
+
+                // Güncelleme iþlemi
+                mevcut.kurum_adi = model.kurum_adi;
+                mevcut.iletisim_no = model.iletisim_no;
+
+                _context.SaveChanges();
+
+              
+                return RedirectToAction("kurum_listele");
             }
 
-            var mevcutKurum = _context.mvc_kurum_kayit.FirstOrDefault(k => k.kurum_id == kurum.kurum_id);
-
-            if (mevcutKurum == null)
-            {
-                return NotFound(); // Eðer kurum bulunamazsa hata mesajý döndürüyoruz.
-            }
-
-            mevcutKurum.kurum_adi = kurum.kurum_adi;
-            mevcutKurum.iletisim_no = kurum.iletisim_no;
-
-            _context.SaveChanges();
-
-            // Güncellenen veriyi listeleme sayfasýna yönlendir
-            return RedirectToAction("kurum_listele");
+            return View(model); 
         }
+
 
 
 
@@ -156,50 +189,43 @@ namespace proje_mvc.Controllers
         }
 
 
+        // GET: Güncelleme sayfasýný açar
         public IActionResult personel_guncelle(Guid personel_id)
         {
             var personel = _context.mvc_personel_kayit.FirstOrDefault(p => p.personel_id == personel_id);
-
             if (personel == null)
             {
-                return NotFound(); // Eðer kurum bulunamazsa
+                return NotFound();
             }
 
-            return View(personel); // Kurumu View'a gönder
+            return View(personel);
         }
 
+        // POST: Güncelleme iþlemini yapar
         [HttpPost]
-        public IActionResult personel_guncelle(PersonelModel personel)
+        public IActionResult personel_guncelle(PersonelModel model)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return View(personel); // Model geçerli deðilse, güncellenen verileri geri gönder
+                var mevcut = _context.mvc_personel_kayit.FirstOrDefault(p => p.personel_id == model.personel_id);
+                if (mevcut == null)
+                    return NotFound();
+
+                mevcut.ad = model.ad;
+                mevcut.soyad = model.soyad;
+                mevcut.adres = model.adres;
+                mevcut.telefon = model.telefon;
+                mevcut.TC = model.TC;
+                mevcut.dogum_tarihi = model.dogum_tarihi;
+                mevcut.ise_baslama_tarihi = model.ise_baslama_tarihi;
+                mevcut.kurum_id = model.kurum_id;
+                mevcut.kart_id = model.kart_id;
+
+                _context.SaveChanges();
+                return RedirectToAction("personel_listele");
             }
-            var mevcutPersonel = _context.mvc_personel_kayit.FirstOrDefault(p => p.personel_id == personel.personel_id);
 
-            if (mevcutPersonel == null)
-            {
-                return NotFound(); // Eðer kurum bulunamazsa hata mesajý döndürüyoruz.
-            }
-
-            // Personel bilgilerini modelde dolduruyoruz
-
-            mevcutPersonel.personel_id = mevcutPersonel.personel_id;
-            mevcutPersonel.ad = mevcutPersonel.ad;
-            mevcutPersonel.soyad = mevcutPersonel.soyad;
-            mevcutPersonel.adres = mevcutPersonel.adres;
-            mevcutPersonel.dogum_tarihi = mevcutPersonel.dogum_tarihi;
-            mevcutPersonel.telefon = mevcutPersonel.telefon;
-            mevcutPersonel.TC = mevcutPersonel.TC;
-            mevcutPersonel.ise_baslama_tarihi = mevcutPersonel.ise_baslama_tarihi;
-            mevcutPersonel.kurum_id = mevcutPersonel.kurum_id;
-
-
-
-            _context.SaveChanges();
-
-            // Güncellenen veriyi listeleme sayfasýna yönlendir
-            return RedirectToAction("personel_listele");
+            return View(model);
         }
 
 
@@ -255,61 +281,53 @@ namespace proje_mvc.Controllers
         }
 
 
+        [HttpGet]
+        public IActionResult kart_guncelle(Guid kart_id)
+        {
+            var kart = _context.mvc_kart_kayit.FirstOrDefault(k => k.kart_id == kart_id);
+            if (kart == null)
+                return NotFound();
+            return View(kart);
+        }
+
+        [HttpPost]
+        public IActionResult kart_guncelle(KartModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Mevcut kaydý bul
+                var mevcutKart = _context.mvc_kart_kayit.FirstOrDefault(k => k.kart_id == model.kart_id);
+
+                if (mevcutKart == null)
+                    return NotFound();
+
+                // Alanlarý güncelle
+                mevcutKart.kurum_id = model.kurum_id;
+                mevcutKart.personel_id = model.personel_id;
+                mevcutKart.kayit_tarihi = model.kayit_tarihi;
+
+                // Güncelle ve kaydet
+                _context.SaveChanges();
+
+                return RedirectToAction("kart_listesi");
+            }
+
+            return View(model);
+        }
+
+
         [HttpPost]
         public IActionResult kart_sil(Guid kart_id)
         {
             var kart = _context.mvc_kart_kayit.FirstOrDefault(k => k.kart_id == kart_id);
-
-            if (kart != null)
-            {
-                _context.mvc_kart_kayit.Remove(kart);
-                _context.SaveChanges();
-            }
-
-            return RedirectToAction("kart_listesi");
-        }
-
-
-
-        public IActionResult kart_guncelle(Guid kart_id)
-        {
-            var kart = _context.mvc_kart_kayit.FirstOrDefault(k => k.kart_id == kart_id);
-
             if (kart == null)
-            {
-                return NotFound(); // Eðer kurum bulunamazsa
-            }
+                return NotFound();
 
-            return View(kart); // Kurumu View'a gönder
-        }
-
-
-
-        [HttpPost]
-        public IActionResult guncelle_kart(KartModel kart)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(kart); // Model geçerli deðilse, güncellenen verileri geri gönder
-            }
-
-            var mevcutKart = _context.mvc_kart_kayit.FirstOrDefault(k => k.kart_id == kart.kart_id);
-
-            if (mevcutKart == null)
-            {
-                return NotFound(); // Eðer kurum bulunamazsa hata mesajý döndürüyoruz.
-            }
-
-            mevcutKart.kart_id = kart.kart_id;
-            mevcutKart.kayit_tarihi = kart.kayit_tarihi;
-            mevcutKart.kurum_id = kart.kurum_id;
-
-
+            _context.mvc_kart_kayit.Remove(kart);
             _context.SaveChanges();
-
-            // Güncellenen veriyi listeleme sayfasýna yönlendir
             return RedirectToAction("kart_listesi");
         }
+
 
 
 
@@ -387,83 +405,98 @@ namespace proje_mvc.Controllers
         public IActionResult izin_listele()
         {
             var izinler = _context.mvc_izin_kayit.ToList();
-            return View(izinler); // Bu þekilde personel listesini view'a gönderin
+            return View(izinler);
         }
 
+        [HttpPost]
         [HttpPost]
         public IActionResult izin_sil(Guid izin_id)
         {
             var izin = _context.mvc_izin_kayit.FirstOrDefault(i => i.izin_id == izin_id);
-
-            if (izin != null)
+            if (izin == null)
             {
-                _context.mvc_izin_kayit.Remove(izin);
-                _context.SaveChanges();
+                return NotFound();
             }
+
+            _context.mvc_izin_kayit.Remove(izin);
+            _context.SaveChanges();
 
             return RedirectToAction("izin_listele");
         }
 
-        public IActionResult izin_guncelle(Guid izin_id)
-        {
-            var izin = _context.mvc_izin_kayit.FirstOrDefault(i => i.izin_id == izin_id);
 
+    
+        [HttpGet]
+        public IActionResult izin_guncelle(Guid id)
+        {
+            var izin = _context.mvc_izin_kayit.FirstOrDefault(i => i.izin_id == id);
             if (izin == null)
             {
-                return NotFound(); // Eðer izin kaydý bulunamazsa hata döndür
+                return NotFound();
             }
 
-            return View(izin); // Bulunan izin bilgilerini View'a gönder
+            return View(izin);
         }
+
 
         [HttpPost]
-        public IActionResult guncelle_izin(IzinModel izin)
+        public IActionResult izin_guncelle(IzinModel model)
         {
-            if (!ModelState.IsValid)
+            var izin = _context.mvc_izin_kayit.FirstOrDefault(i => i.izin_id == model.izin_id);
+            if (izin != null)
             {
-                return View(izin); // Model geçerli deðilse formu tekrar göster
+                izin.personel_id = model.personel_id;
+                izin.ad = model.ad;
+                izin.soyad = model.soyad;
+                izin.izin_turu = model.izin_turu;
+                izin.izin_aciklama = model.izin_aciklama;
+                izin.izin_baslangic_tarihi = model.izin_baslangic_tarihi;
+                izin.izin_bitis_tarihi = model.izin_bitis_tarihi;
+                izin.kurum_id = model.kurum_id;
+
+                _context.SaveChanges();
             }
 
-            var mevcutIzin = _context.mvc_izin_kayit.FirstOrDefault(i => i.izin_id == izin.izin_id);
-
-            if (mevcutIzin == null)
-            {
-                return NotFound(); // Eðer izin kaydý yoksa hata döndür
-            }
-
-            // Mevcut izin kaydýný güncelle
-            mevcutIzin.izin_baslangic_tarihi = izin.izin_baslangic_tarihi;
-            mevcutIzin.izin_bitis_tarihi = izin.izin_bitis_tarihi;
-            mevcutIzin.izin_turu = izin.izin_turu;
-            mevcutIzin.izin_aciklama = izin.izin_aciklama;
-            mevcutIzin.kurum_id = izin.kurum_id;
-            mevcutIzin.personel_id = izin.personel_id;
-
-            _context.SaveChanges(); // Deðiþiklikleri kaydet
-
-            return RedirectToAction("izin_listesi"); // Güncellendikten sonra liste sayfasýna yönlendir
+            return RedirectToAction("izin_listele"); // Ýzinlerin listelendiði sayfaya yönlendir
         }
 
 
-        [HttpGet]
+
+        // GET: görev ekleme formunu göster
         public IActionResult gorev_ekle()
         {
-            return View();
+            var model = new GorevModel
+            {
+                gorev_id = Guid.NewGuid(),
+          
+                gorev_baslangic_tarihi = DateTime.Now
+            };
+            return View(model);
         }
 
+        // POST: görev ekleme iþlemi
         [HttpPost]
         public IActionResult gorev_ekle(GorevModel gorev)
         {
             if (ModelState.IsValid)
             {
                 gorev.gorev_id = Guid.NewGuid();
+                gorev.gorev_baslangic_tarihi = DateTime.Now;
+
                 _context.mvc_gorev_kayit.Add(gorev);
                 _context.SaveChanges();
                 return RedirectToAction("gorev_listele");
             }
 
+            // Hatalar varsa konsola yaz
+            foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+            {
+                Console.WriteLine(error.ErrorMessage);
+            }
+
             return View(gorev);
         }
+
 
         public IActionResult gorev_listele()
         {
@@ -472,25 +505,24 @@ namespace proje_mvc.Controllers
         }
 
 
+
         [HttpPost]
-        public IActionResult gorev_sil(Guid gorev_id)
+        [HttpPost]
+        public IActionResult GorevSil(Guid gorev_id)
         {
             var gorev = _context.mvc_gorev_kayit.FirstOrDefault(g => g.gorev_id == gorev_id);
-
             if (gorev != null)
             {
                 _context.mvc_gorev_kayit.Remove(gorev);
                 _context.SaveChanges();
             }
-
             return RedirectToAction("gorev_listele");
         }
 
-
-        public IActionResult gorev_guncelle(Guid gorev_id)
+        [HttpGet]
+        public IActionResult gorev_guncelle(Guid id)
         {
-            var gorev = _context.mvc_gorev_kayit.FirstOrDefault(g => g.gorev_id == gorev_id);
-
+            var gorev = _context.mvc_gorev_kayit.FirstOrDefault(g => g.gorev_id == id);
             if (gorev == null)
             {
                 return NotFound();
@@ -498,6 +530,27 @@ namespace proje_mvc.Controllers
 
             return View(gorev);
         }
+        [HttpPost]
+        public IActionResult gorev_guncelle(GorevModel model)
+        {
+            var gorev = _context.mvc_gorev_kayit.FirstOrDefault(g => g.gorev_id == model.gorev_id);
+            if (gorev != null)
+            {
+                gorev.personel_id = model.personel_id;
+                gorev.ad = model.ad;
+                gorev.soyad = model.soyad;
+                gorev.gorev_adi = model.gorev_adi;
+                gorev.gorev_aciklama = model.gorev_aciklama;
+                gorev.gorev_baslangic_tarihi = model.gorev_baslangic_tarihi;
+
+                _context.SaveChanges();
+            }
+
+            return RedirectToAction("gorev_listele");
+        }
+
+
+
         /*
                 [HttpPost]
                 public IActionResult guncelle_gorev(GorevModel gorev)
@@ -567,8 +620,8 @@ namespace proje_mvc.Controllers
                         return View(model);
                     }
                 }*/
-       
-            
+
+
 
     }
 }

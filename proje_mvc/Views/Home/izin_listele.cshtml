@@ -116,26 +116,26 @@
                     <tr>
                         <td>@izin.Id</td>
                         <td>@izin.personel_id</td>
-                        <td>@izin.izin_baslangic_tarihi</td>
-                        <td>@izin.izin_bitis_tarihi</td>
+                        <td>@izin.izin_baslangic_tarihi?.ToString("dd/MM/yyyy")</td>
+                        <td>@izin.izin_bitis_tarihi?.ToString("dd/MM/yyyy")</td>
                         <td>@izin.izin_turu</td>
                         <td>@izin.izin_aciklama</td>
                         <td>@izin.kurum_id</td>
                         <td>
+                            <!-- Düzenle Butonu -->
+                            <a href="@Url.Action("izin_guncelle", "Home", new { id = izin.izin_id })" class="btn btn-warning">Düzenle</a>
 
-                            <form method="post" action="@Url.Action("izin_guncelle", "Home")">
-
-                                <input type="hidden" name="izin_id" value="@izin.izin_id" />
-                                <button type="submit" class="btn">Düzenle</button>
-                            </form>
-                            <form method="post" action="@Url.Action("izin_sil", "Home")">
+                            <!-- Sil Butonu -->
+                            <form method="post" action="@Url.Action("izin_sil", "Home")" style="display:inline;">
                                 <input type="hidden" name="izin_id" value="@izin.izin_id" />
                                 <button type="submit" class="btn" style="background-color: #f44336;" onclick="return confirm('Bu izini silmek istediğinizden emin misiniz?');">
                                     Sil
                                 </button>
                             </form>
+                        </td>
                     </tr>
                 }
+
             </tbody>
         </table>
     </div>

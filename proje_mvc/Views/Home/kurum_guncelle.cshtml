@@ -81,21 +81,20 @@
     <div class="container">
         <h2>Kurum Bilgilerini Güncelle</h2>
 
-        <form method="post" action="@Url.Action("kurum_guncelle", "Home")">
-            <input type="hidden" name="kurum_id" value="@Model.kurum_id" />
+        <form asp-action="kurum_guncelle" method="post">
+            <input type="hidden" asp-for="kurum_id" />
 
             <div>
-                <label for="kurum_adi">Kurum Adı:</label>
-                <input type="text" id="kurum_adi" name="kurum_adi" value="@Model.kurum_adi" required />
+                <label>Kurum Adı</label>
+                <input asp-for="kurum_adi" class="form-control" />
             </div>
 
             <div>
-                <label for="iletisim_no">İletişim No:</label>
-                <input type="text" id="iletisim_no" name="iletisim_no" value="@Model.iletisim_no" required />
+                <label>İletişim No</label>
+                <input asp-for="iletisim_no" class="form-control" />
             </div>
 
-            <button type="submit">Güncelle</button>
-            <a href="@Url.Action("kurum_listele", "Home")" class="btn-cancel">İptal</a>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
         </form>
     </div>
 

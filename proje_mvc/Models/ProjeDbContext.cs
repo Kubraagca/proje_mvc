@@ -17,6 +17,7 @@ namespace proje_mvc.Models
         public DbSet<GorevModel> mvc_gorev_kayit { get; set; }
         public DbSet<IzinModel> mvc_izin_kayit { get; set; }
         public DbSet<KullaniciModel> mvc_kullanici_giris { get; set; }
+        public DbSet<KullaniciModel> mvc_etkinlikler { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -122,9 +122,12 @@
 
                         <td>
                             <a href="@Url.Action("gorev_guncelle", "Home", new { id = gorev.gorev_id })" class="btn">Düzenle</a>
-                            <a href="@Url.Action("gorev_ekle", "Home", new { id = gorev.gorev_id })"
-                               class="btn" style="background-color: #f44336;"
-                               onclick="return confirm('Bu görevi silmek istediğinizden emin misiniz?');">Sil</a>
+                            <form asp-action="GorevSil" asp-controller="Home" method="post" style="display:inline;" onsubmit="return confirm('Bu görevi silmek istediğinizden emin misiniz?');">
+                                <input type="hidden" name="gorev_id" value="@gorev.gorev_id" />
+                                <button type="submit" class="btn" style="background-color: #f44336;">Sil</button>
+                            </form>
+
+
                         </td>
                     </tr>
                 }

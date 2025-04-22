@@ -1,44 +1,46 @@
 ﻿@model proje_mvc.Models.IzinModel
 
-
 @{
     ViewData["Title"] = "İzin Güncelle";
 }
 
+<h2>İzin Güncelle</h2>
 
-<form method="post" action="/İzin/Guncelle">
-    <div class="form-group">
-        <label for="personelId">Personel ID</label>
-        <input type="text" class="form-control" id="personelId" name="PersonelId" required />
-    </div>
-    <div class="form-group">
-        <label for="ad">Ad</label>
-        <input type="text" class="form-control" id="ad" name="Ad" />
-    </div>
-    <div class="form-group">
-        <label for="soyad">Soyad</label>
-        <input type="text" class="form-control" id="soyad" name="Soyad" />
-    </div>
-    <div class="form-group">
-        <label for="IzinTuru">İzin Türü</label>
-        <select class="form-control" id="IzinTuru" name="IzinTuru" required>
-            <option value="1">Yıllık İzin</option>
-            <option value="2">Hastalık İzni</option>
-            <option value="3">Ücretli İzin</option>
-            <option value="4">Babalık İzni</option>
-            <option value="5">Doğum İzni</option>
+<form asp-action="izin_guncelle" asp-controller="Home" method="post">
+    <input type="hidden" name="izin_id" value="@Model.izin_id" />
 
-        </select>
+    <div>
+        <label>Personel ID</label>
+        <input type="number" name="personel_id" value="@Model.personel_id" class="form-control" />
     </div>
- 
-    <div class="form-group">
-        <label for="IzınBaslangicTarihi">İzin Başlangıç Tarihi</label>
-        <input type="date" class="form-control" id="IzınBaslangicTarihi" name="IzınBaslangicTarihi" value="@Model.izin_baslangic_tarihi" required />
+    <div>
+        <label>Ad</label>
+        <input type="text" name="ad" value="@Model.ad" class="form-control" />
+    </div>
+    <div>
+        <label>Soyad</label>
+        <input type="text" name="soyad" value="@Model.soyad" class="form-control" />
+    </div>
+    <div>
+        <label>İzin Türü</label>
+        <input type="text" name="izin_turu" value="@Model.izin_turu" class="form-control" />
+    </div>
+    <div>
+        <label>İzin Açıklama</label>
+        <textarea name="izin_aciklama" class="form-control">@Model.izin_aciklama</textarea>
+    </div>
+    <div>
+        <label>Başlangıç Tarihi</label>
+        <input type="date" name="izin_baslangic_tarihi" value="@Model.izin_baslangic_tarihi?.ToString("yyyy-MM-dd")" class="form-control" />
+    </div>
+    <div>
+        <label>Bitiş Tarihi</label>
+        <input type="date" name="izin_bitis_tarihi" value="@Model.izin_bitis_tarihi?.ToString("yyyy-MM-dd")" class="form-control" />
+    </div>
+    <div>
+        <label>Kurum ID</label>
+        <input type="text" name="kurum_id" value="@Model.kurum_id" class="form-control" />
     </div>
 
-    <div class="form-group">
-        <label for="IzınBitisTarihi">İzin Bitiş Tarihi</label>
-        <input type="date" class="form-control" id="IzınBitisTarihi" name="IzınBitisTarihi" value="@Model.izin_bitis_tarihi" required />
-    </div>
-    <button type="submit" class="btn btn-primary">Güncelle</button>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
 </form>

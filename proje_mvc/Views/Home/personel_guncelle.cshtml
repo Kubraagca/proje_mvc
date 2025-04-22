@@ -1,39 +1,34 @@
-﻿@{
-    ViewData["Title"] = "Personel Güncelle";
-}
+﻿@model proje_mvc.Models.PersonelModel
 
+<form asp-action="personel_guncelle" method="post">
+    <input type="hidden" name="personel_id" value="@Model.personel_id" />
 
-<div class="container">
-    <h2>Personel Bilgilerini Güncelle</h2>
+    <label>Ad</label>
+    <input type="text" name="ad" value="@Model.ad" />
 
-    <form method="post" action="@Url.Action("personel_guncelle", "Home")">
+    <label>Soyad</label>
+    <input type="text" name="soyad" value="@Model.soyad" />
 
-        <input type="hidden" name="personel_id" value="@Model.personel_id" />
+    <label>Adres</label>
+    <input type="text" name="adres" value="@Model.adres" />
 
-        
-    <div class="form-group">
-        <label for="ad">Ad</label>
-        <input type="text" class="form-control" id="ad" name="Ad" />
-    </div>
-    <div class="form-group">
-        <label for="soyad">Soyad</label>
-        <input type="text" class="form-control" id="soyad" name="Soyad" />
-    </div>
-    <div class="form-group">
-        <label for="dogum_tarihi">Doğum Tarihi</label>
-        <input type="date" class="form-control" id="dogum_tarihi" name="dogum_tarihi" value="@Model.dogum_tarihi" required />
-    </div>
-        <div class="form-group">
-            <label for="adres">adres</label>
-            <input type="text" class="form-control" id="adres" name="adres" value="@Model.adres" required />
-        </div>
-    <div class="form-group">
-        <label for="telefon">Telefon</label>
-        <input type="text" class="form-control" id="telefon" name="Telefon" />
-    </div>
-        <div class="form-group">
-            <label for="TC">TC</label>
-            <input type="text" class="form-control" id="TC" name="TC" />
-        </div>
-    <button type="submit" class="btn btn-primary">Güncelle</button>
+    <label>Telefon</label>
+    <input type="text" name="telefon" value="@Model.telefon" />
+
+    <label>TC</label>
+    <input type="text" name="TC" value="@Model.TC" />
+
+    <label>Doğum Tarihi</label>
+    <input type="date" name="dogum_tarihi" value="@Model.dogum_tarihi?.ToString("yyyy-MM-dd")" />
+
+    <label>İşe Başlama Tarihi</label>
+    <input type="date" name="ise_baslama_tarihi" value="@Model.ise_baslama_tarihi?.ToString("yyyy-MM-dd")" />
+
+    <label>Kurum ID</label>
+    <input type="text" name="kurum_id" value="@Model.kurum_id" />
+
+    <label>Kart ID</label>
+    <input type="text" name="kart_id" value="@Model.kart_id" />
+
+    <button type="submit">Güncelle</button>
 </form>

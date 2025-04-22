@@ -108,7 +108,8 @@
                     <th>TC Kimlik No</th>
                     <th>Telefon</th>
                     <th>İşe Başlama Tarihi</th>
-                    <th>İşlemler</th>
+                    <th>Kurum Id</th>
+                    <th>Kart Id</th>
                 </tr>
             </thead>
             <tbody>
@@ -123,17 +124,18 @@
                         <td>@personel.TC</td>
                         <td>@personel.telefon</td>
                         <td>@personel.ise_baslama_tarihi</td>
+                        <td>@personel.kurum_id</td>
+                        <td>@personel.kart_id</td>
                         <td>
-                         <form method="post" action="@Url.Action("personel_guncelle", "Home")">
-
+                            <form method="get" action="@Url.Action("personel_guncelle", "Home")">
                                 <input type="hidden" name="personel_id" value="@personel.personel_id" />
-                                <button type="submit" class="btn">Düzenle</button>
+                                <button type="submit" class="btn btn-warning">Düzenle</button>
                             </form>
+
+
                             <form method="post" action="@Url.Action("personel_sil", "Home")">
                                 <input type="hidden" name="personel_id" value="@personel.personel_id" />
-                                <button type="submit" class="btn" style="background-color: #f44336;" onclick="return confirm('Bu personeli silmek istediğinizden emin misiniz?');">
-                                    Sil
-                                </button>
+                                <button type="submit" onclick="return confirm('Silmek istediğinizden emin misiniz?');">Sil</button>
                             </form>
                         </td>
 

@@ -1,0 +1,54 @@
+﻿@model proje_mvc.Models.KurumModel
+
+@{
+    ViewData["Title"] = "Kurum Bilgilerini Güncelle";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card-premium overflow-hidden">
+            <div class="p-4 border-bottom bg-light bg-opacity-50 d-flex justify-content-between align-items-center">
+                <h5 class="mb-0 fw-bold text-primary"><i class="bi bi-building-gear me-2"></i> Kurumsal Kart Düzenleme</h5>
+                <a href="/Home/kurum_listele" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+                    <i class="bi bi-arrow-left me-2"></i> Listeye Dön
+                </a>
+            </div>
+
+            <div class="p-4 bg-white">
+                <form asp-action="kurum_guncelle" method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" asp-for="kurum_id" />
+                    <input type="hidden" asp-for="Id" />
+                    
+                    <div class="mb-4">
+                        <label class="form-label small fw-bold text-muted">Kurum Ünvanı</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-light border-end-0"><i class="bi bi-building"></i></span>
+                            <input type="text" asp-for="kurum_adi" class="form-control rounded-end-3 border-start-0" required />
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label small fw-bold text-muted">İletişim Hattı</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-light border-end-0"><i class="bi bi-telephone"></i></span>
+                            <input type="tel" asp-for="iletisim_no" class="form-control rounded-end-3 border-start-0" required />
+                        </div>
+                    </div>
+
+                    <div class="p-3 bg-light rounded-4 mb-4">
+                        <p class="small text-muted mb-0">
+                            <i class="bi bi-shield-check me-2"></i> Bu kuruma bağlı personel verileri bu değişiklikten etkilenmez.
+                        </p>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary-corporate py-2 fw-bold">
+                            <i class="bi bi-check2-circle me-2"></i> Değişiklikleri Onayla
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

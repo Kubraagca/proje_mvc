@@ -1,0 +1,134 @@
+﻿@model dynamic
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Genel Bakış";
+    var ad = Context.Session.GetString("ad");
+    var soyad = Context.Session.GetString("soyad");
+}
+
+<div class="row align-items-center mb-5">
+    <div class="col-auto">
+        <div class="bg-primary-corporate p-3 rounded-4 shadow-sm text-white">
+            <i class="bi bi-hexagon-fill fs-2"></i>
+        </div>
+    </div>
+    <div class="col">
+        <h2 class="fw-bold text-primary mb-1">Hoş Geldiniz, @ad @soyad!</h2>
+        <p class="text-muted mb-0">Sistem genel durumu ve kurumsal veriler aşağıda listelenmiştir.</p>
+    </div>
+</div>
+
+<div class="row g-4 mb-4">
+    <div class="col-md-4">
+        <div class="card-premium p-4 border-start border-primary border-4 shadow-sm">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h6 class="text-muted small text-uppercase fw-bold">Toplam Kurum</h6>
+                    <h2 class="fw-bold mb-0" id="totalKurum">...</h2>
+                </div>
+                <div class="bg-primary bg-opacity-10 p-3 rounded-3 text-primary">
+                    <i class="bi bi-building fs-3"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card-premium p-4 border-start border-success border-4 shadow-sm">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h6 class="text-muted small text-uppercase fw-bold">Toplam Personel</h6>
+                    <h2 class="fw-bold mb-0" id="totalPersonel">...</h2>
+                </div>
+                <div class="bg-success bg-opacity-10 p-3 rounded-3 text-success">
+                    <i class="bi bi-people fs-3"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card-premium p-4 border-start border-info border-4 shadow-sm">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h6 class="text-muted small text-uppercase fw-bold">Tanımlı Kartlar</h6>
+                    <h2 class="fw-bold mb-0" id="totalKart">...</h2>
+                </div>
+                <div class="bg-info bg-opacity-10 p-3 rounded-3 text-info">
+                    <i class="bi bi-credit-card-2-front fs-3"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-7">
+        <div class="card-premium p-4 h-100 shadow-sm">
+            <h6 class="fw-bold text-primary mb-4"><i class="bi bi-graph-up-arrow me-2"></i> Veri Dağılım Grafiği</h6>
+            <div style="height: 350px;">
+                <canvas id="statisticsChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-5">
+        <div class="card-premium p-4 h-100 shadow-sm overflow-hidden">
+            <h6 class="fw-bold text-primary mb-4"><i class="bi bi-megaphone me-2"></i> Güncel Duyurular</h6>
+            <div id="duyuruListesi">
+                @if (ViewBag.Duyurular != null)
+                {
+                    foreach (var duyuru in ViewBag.Duyurular)
+                    {
+                        <div class="p-3 mb-3 bg-light rounded-4 border-start border-primary border-3">
+                            <p class="mb-0 small fw-medium">@duyuru</p>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="text-center py-5 opacity-50">
+                        <i class="bi bi-inbox fs-1 mb-3 d-block"></i>
+                        <span class="small">Henüz bir duyuru yayınlanmadı.</span>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        $(document).ready(function () {
+            $.get("/api/statistics/counts", function (data) {
+                $('#totalKurum').text(data.totalKurum);
+                $('#totalPersonel').text(data.totalPersonel);
+                $('#totalKart').text(data.totalKart);
+
+                const ctx = document.getElementById('statisticsChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Kurumlar', 'Personeller', 'Kartlar'],
+                        datasets: [{
+                            label: 'Genel Toplamlar',
+                            data: [data.totalKurum, data.totalPersonel, data.totalKart],
+                            backgroundColor: ['#0f172a', '#3b82f6', '#10b981'],
+                            borderRadius: 12,
+                            barThickness: 40
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false }
+                        },
+                        scales: {
+                            y: { beginAtZero: true, grid: { display: false } },
+                            x: { grid: { display: false } }
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+}

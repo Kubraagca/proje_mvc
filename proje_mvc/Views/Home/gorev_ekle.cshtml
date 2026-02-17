@@ -1,0 +1,73 @@
+﻿@model proje_mvc.Models.GorevModel
+
+@{
+    ViewData["Title"] = "Yeni Görev Atama";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-7">
+        <div class="card-premium overflow-hidden">
+            <div class="p-4 border-bottom bg-light bg-opacity-50 d-flex justify-content-between align-items-center">
+                <h5 class="mb-0 fw-bold text-primary"><i class="bi bi-list-task me-2"></i> Yeni Görev Tanımla</h5>
+                <a href="/Home/gorev_listele" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+                    <i class="bi bi-arrow-left me-2"></i> Görev Havuzu
+                </a>
+            </div>
+
+            <div class="p-4 bg-white">
+                <form asp-action="gorev_ekle" method="post">
+                    @Html.AntiForgeryToken()
+                    
+                    <div class="row g-4">
+                        <!-- Sorumlu Personel -->
+                        <div class="col-12 py-3 px-4 bg-primary bg-opacity-10 rounded-4 mb-2 border border-primary border-opacity-25">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <div class="bg-primary text-white p-3 rounded-circle">
+                                        <i class="bi bi-person-workspace fs-4"></i>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label small fw-bold text-muted d-block mb-0">Sorumlu Personel</label>
+                                    <span class="fw-bold text-primary fs-5">@Model.ad</span>
+                                    <input type="hidden" asp-for="personel_id" />
+                                    <input type="hidden" asp-for="ad" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8">
+                            <label class="form-label small fw-bold text-muted">Görev Başlığı / Tanımı</label>
+                            <input asp-for="gorev_adi" class="form-control rounded-3" placeholder="Görevi kısaca özetleyin..." required />
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label small fw-bold text-muted">Öncelik / Durum</label>
+                            <select asp-for="gorev_durumu" class="form-select rounded-3 shadow-sm" required>
+                                <option value="1">Yeni / Beklemede</option>
+                                <option value="2">Devam Ediyor</option>
+                                <option value="3">Tamamlandı</option>
+                                <option value="4">İptal Edildi</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label class="form-label small fw-bold text-muted">Başlangıç Tarihi</label>
+                            <input asp-for="gorev_baslangic_tarihi" type="date" class="form-control rounded-3" value="@Model.gorev_baslangic_tarihi?.ToString("yyyy-MM-dd")" required />
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label small fw-bold text-muted">Görev Detayları</label>
+                            <textarea asp-for="gorev_aciklama" class="form-control rounded-3" rows="4" placeholder="Görevin teknik detaylarını ve beklentileri buraya yazınız..."></textarea>
+                        </div>
+
+                        <div class="col-12 text-end mt-4">
+                            <button type="submit" class="btn btn-primary-corporate px-5 py-2 fw-bold rounded-pill shadow-sm">
+                                Görevi Ata <i class="bi bi-plus-circle ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

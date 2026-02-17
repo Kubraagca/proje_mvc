@@ -1,0 +1,142 @@
+﻿@{
+    ViewData["Title"] = "Kontrol Paneli";
+    var izinler = ViewBag.Izinler as IEnumerable<dynamic>;
+    var gorevler = ViewBag.Gorevler as IEnumerable<dynamic>;
+    var duyurular = ViewBag.Duyurular as List<string>;
+}
+
+@section Scripts {
+    <!-- FullCalendar Resources -->
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css' rel='stylesheet' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                locale: 'tr',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+                events: @Html.Raw(Json.Serialize(ViewBag.Izinler)), // Simplified for demo, logic can be expanded
+                themeSystem: 'bootstrap5'
+            });
+            calendar.render();
+        });
+    </script>
+}
+
+<div class="row g-4 mb-4">
+    <!-- Stat Cards -->
+    <div class="col-md-3">
+        <div class="card-premium p-4 border-start border-primary border-4">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h6 class="text-muted small text-uppercase fw-bold">Toplam Personel</h6>
+                    <h2 class="fw-bold mb-0" id="statPersonel">...</h2>
+                </div>
+                <div class="bg-primary bg-opacity-10 p-3 rounded-3 text-primary">
+                    <i class="bi bi-people-fill fs-3"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card-premium p-4 border-start border-success border-4">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h6 class="text-muted small text-uppercase fw-bold">Aktif İzinler</h6>
+                    <h2 class="fw-bold mb-0">@izinler?.Count()</h2>
+                </div>
+                <div class="bg-success bg-opacity-10 p-3 rounded-3 text-success">
+                    <i class="bi bi-calendar-check-fill fs-3"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card-premium p-4 border-start border-warning border-4">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h6 class="text-muted small text-uppercase fw-bold">Açık Görevler</h6>
+                    <h2 class="fw-bold mb-0">@gorevler?.Count()</h2>
+                </div>
+                <div class="bg-warning bg-opacity-10 p-3 rounded-3 text-warning">
+                    <i class="bi bi-list-task fs-3"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card-premium p-4 border-start border-info border-4">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h6 class="text-muted small text-uppercase fw-bold">Duyurular</h6>
+                    <h2 class="fw-bold mb-0">@duyurular?.Count()</h2>
+                </div>
+                <div class="bg-info bg-opacity-10 p-3 rounded-3 text-info">
+                    <i class="bi bi-megaphone-fill fs-3"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <!-- Calendar Section -->
+    <div class="col-md-8">
+        <div class="card-premium p-4 h-100">
+            <h6 class="mb-4 fw-bold text-primary"><i class="bi bi-calendar3 me-2"></i> Kurumsal Takvim</h6>
+            <div id="calendar" style="min-height: 500px;"></div>
+        </div>
+    </div>
+
+    <!-- Sidebar Info -->
+    <div class="col-md-4">
+        <div class="card-premium p-4 mb-4 bg-primary text-white border-0 shadow-lg" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;">
+            <h5 class="fw-bold mb-3">Hızlı İşlemler</h5>
+            <div class="d-grid gap-2">
+                <a href="/home/personel_ekle" class="btn btn-light text-primary fw-bold text-start">
+                    <i class="bi bi-person-plus-fill me-2"></i> Yeni Personel
+                </a>
+                <a href="/home/izin_ekle" class="btn btn-light text-primary fw-bold text-start">
+                    <i class="bi bi-calendar-plus-fill me-2"></i> İzin Talebi Oluştur
+                </a>
+                <a href="/Home/Mesajlar" class="btn btn-warning fw-bold text-start">
+                    <i class="bi bi-chat-dots-fill me-2"></i> Mesajlaşmayı Başlat
+                </a>
+            </div>
+        </div>
+
+        <div class="card-premium h-100 overflow-hidden">
+            <div class="p-4 border-bottom bg-light bg-opacity-50">
+                <h6 class="mb-0 fw-bold text-primary"><i class="bi bi-info-circle-fill me-2"></i> Sistem Duyuruları</h6>
+            </div>
+            <div class="p-4">
+                @if (duyurular != null)
+                {
+                    foreach (var duyuru in duyurular)
+                    {
+                        <div class="d-flex align-items-start mb-3 small">
+                            <i class="bi bi-dot text-primary fs-4 mt-n1"></i>
+                            <div>
+                                <p class="mb-0">@duyuru</p>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $.get("/home/GetDashboardStats", function(data) {
+            $("#statPersonel").text(data.personel);
+        });
+    });
+</script>

@@ -1,0 +1,87 @@
+﻿@model proje_mvc.Models.PersonelModel
+
+@{
+    ViewData["Title"] = "Yeni Personel Kaydı";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card-premium overflow-hidden">
+            <div class="p-4 border-bottom bg-light bg-opacity-50 d-flex justify-content-between align-items-center">
+                <h5 class="mb-0 fw-bold text-primary"><i class="bi bi-person-plus-fill me-2"></i> Yeni Personel Tanımla</h5>
+                <a href="/Home/personel_listele" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+                    <i class="bi bi-arrow-left me-2"></i> Listeye Dön
+                </a>
+            </div>
+
+            <div class="p-4 bg-white">
+                <form method="post" action="@Url.Action("personel_ekle", "Home")">
+                    @Html.AntiForgeryToken()
+                    
+                    <div class="row g-4">
+                        <!-- Temel Bilgiler -->
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">Ad</label>
+                            <input type="text" name="ad" class="form-control rounded-3" value="@Model.ad" required placeholder="Örn: Ahmet" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">Soyad</label>
+                            <input type="text" name="soyad" class="form-control rounded-3" value="@Model.soyad" required placeholder="Örn: Yılmaz" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">TC Kimlik No</label>
+                            <input type="text" name="TC" class="form-control rounded-3" value="@Model.TC" required maxlength="11" placeholder="11 haneli TC No" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">Telefon</label>
+                            <input type="tel" name="telefon" class="form-control rounded-3" value="@Model.telefon" required placeholder="05XX XXX XX XX" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">Doğum Tarihi</label>
+                            <input type="date" name="dogum_tarihi" class="form-control rounded-3" value="@Model.dogum_tarihi?.ToString("yyyy-MM-dd")" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">İşe Başlama Tarihi</label>
+                            <input type="date" name="ise_baslama_tarihi" class="form-control rounded-3" value="@Model.ise_baslama_tarihi?.ToString("yyyy-MM-dd")" required />
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label small fw-bold text-muted">İkamet Adresi</label>
+                            <textarea name="adres" class="form-control rounded-3" rows="2" required placeholder="Mahalle, Sokak, No, İlçe/İl">@Model.adres</textarea>
+                        </div>
+
+                        <!-- Kurumsal Atamalar -->
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">Bağlı Olduğu Kurum</label>
+                            <select name="Id" class="form-select rounded-3 shadow-sm border-primary border-opacity-25" required>
+                                <option value="">Kurum Seçiniz...</option>
+                                @foreach (var kurum in ViewBag.Kurumlar)
+                                {
+                                    <option value="@kurum.Id">@kurum.kurum_adi</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">Erişim Kart ID</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0"><i class="bi bi-credit-card"></i></span>
+                                <input type="text" name="kart_id" class="form-control rounded-end-3 border-start-0" value="@Model.kart_id" required placeholder="Sistem Kart Kod..." />
+                            </div>
+                        </div>
+
+                        <div class="col-12 mt-5">
+                            <div class="p-3 bg-light rounded-4 d-flex justify-content-between align-items-center">
+                                <p class="small text-muted mb-0"><i class="bi bi-info-circle me-2"></i> Personel kaydı sonrası giriş yetkileri otomatik tanımlanacaktır.</p>
+                                <button type="submit" class="btn btn-primary-corporate px-5 py-2 fw-bold">
+                                    Kaydı Tamamla <i class="bi bi-check-circle ms-2"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+﻿@model List<proje_mvc.Models.KartModel>
+
+@{
+    ViewData["Title"] = "Kart Yönetimi";
+}
+
+<div class="card-premium overflow-hidden">
+    <div class="p-4 border-bottom bg-light bg-opacity-50 d-flex justify-content-between align-items-center">
+        <h5 class="mb-0 fw-bold text-primary"><i class="bi bi-credit-card-2-front me-2"></i> Sistem Kartları</h5>
+        <a href="/Home/kart_ekle" class="btn btn-primary-corporate btn-sm">
+            <i class="bi bi-plus-circle me-2"></i> Yeni Kart Tanımla
+        </a>
+    </div>
+
+    <div class="table-responsive p-0">
+        <table class="table table-corporate mb-0">
+            <thead>
+                <tr>
+                    <th class="ps-4">Sistem Numarası</th>
+                    <th>Kurum Bağlantısı</th>
+                    <th>Personel Ataması</th>
+                    <th>Kayıt Tarihi</th>
+                    <th class="text-end pe-4">İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var kart in Model)
+                {
+                    <tr>
+                        <td class="ps-4">
+                            <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 px-3">
+                                #@kart.Id
+                            </span>
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center text-muted small">
+                                <i class="bi bi-building me-2"></i> @kart.kurum_id
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center text-muted small">
+                                <i class="bi bi-person-badge me-2"></i> @kart.personel_id
+                            </div>
+                        </td>
+                        <td>
+                            <div class="text-muted small">
+                                <i class="bi bi-calendar-event me-2"></i> @kart.kayit_tarihi.ToString("dd MMM yyyy")
+                            </div>
+                        </td>
+                        <td class="text-end pe-4">
+                            <div class="btn-group">
+                                <a href="@Url.Action("kart_guncelle", "Home", new { kart_id = kart.kart_id })" class="btn btn-sm btn-outline-primary rounded-start-pill px-3">
+                                    <i class="bi bi-pencil-square"></i> Düzenle
+                                </a>
+                                <form method="post" action="@Url.Action("kart_sil", "Home")" class="d-inline">
+                                    <input type="hidden" name="kart_id" value="@kart.kart_id" />
+                                    <button type="submit" class="btn btn-sm btn-outline-danger rounded-end-pill px-3" onclick="return confirm('Bu kartı iptal etmek istediğinizden emin misiniz?');">
+                                        <i class="bi bi-trash"></i> İptal
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    
+    @if (!Model.Any())
+    {
+        <div class="p-5 text-center text-muted">
+            <i class="bi bi-inbox fs-1 d-block mb-3 opacity-25"></i>
+            Henüz sisteme tanımlanmış bir kart bulunmuyor.
+        </div>
+    }
+</div>

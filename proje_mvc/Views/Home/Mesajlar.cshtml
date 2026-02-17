@@ -1,0 +1,266 @@
+@{
+    ViewData["Title"] = "Mesajlaşma";
+    var personeller = ViewBag.Personeller as List<proje_mvc.Models.PersonelModel>;
+}
+
+<style>
+    .chat-container { display: flex; height: calc(100vh - 150px); }
+    .contacts-panel { width: 320px; border-right: 1px solid #e5e7eb; background: #f8fafc; }
+    .chat-panel { flex: 1; display: flex; flex-direction: column; background: #fff; }
+    .contact-item { padding: 1rem; border-bottom: 1px solid #e5e7eb; cursor: pointer; transition: all 0.2s; }
+    .contact-item:hover, .contact-item.active { background: #e0f2fe; }
+    .contact-avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1.2rem; }
+    .chat-header { padding: 1.25rem; border-bottom: 2px solid #e5e7eb; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+    .messages-area { flex: 1; overflow-y: auto; padding: 1.5rem; background: #f9fafb; }
+    .message-bubble { max-width: 70%; margin-bottom: 1rem; padding: 0.75rem 1rem; border-radius: 1rem; word-wrap: break-word; }
+    .message-sent { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; margin-left: auto; border-bottom-right-radius: 0.25rem; }
+    .message-received { background: white; border: 1px solid #e5e7eb; border-bottom-left-radius: 0.25rem; }
+    .message-time { font-size: 0.7rem; opacity: 0.7; margin-top: 0.25rem; }
+    .chat-input-area { padding: 1.25rem; border-top: 2px solid #e5e7eb; background: white; }
+    .unread-badge { background: #ef4444; color: white; font-size: 0.7rem; padding: 0.15rem 0.5rem; border-radius: 1rem; font-weight: 600; }
+    
+    /* Toast Bildirim Stilleri */
+    .toast-notification {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: white;
+        border-radius: 12px;
+        padding: 1rem;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        min-width: 300px;
+        max-width: 400px;
+        z-index: 9999;
+        transform: translateX(450px);
+        transition: transform 0.3s ease-in-out;
+        border-left: 4px solid #667eea;
+    }
+    
+    .toast-notification.show {
+        transform: translateX(0);
+    }
+</style>
+
+<div class="card-premium overflow-hidden">
+    <div class="chat-container">
+        <!-- Kişiler Paneli -->
+        <div class="contacts-panel">
+            <div class="p-4 border-bottom bg-white">
+                <h6 class="mb-0 fw-bold text-primary"><i class="bi bi-people-fill me-2"></i>Kişiler</h6>
+            </div>
+            <div id="contactsList">
+                @if (personeller != null)
+                {
+                    foreach (var p in personeller)
+                    {
+                        if (p.kullanici_adi != User.Identity.Name)
+                        {
+                            <div class="contact-item" onclick="selectContact('@p.kullanici_adi', '@p.ad @p.soyad')">
+                                <div class="d-flex align-items-center">
+                                    <div class="contact-avatar me-3">@p.ad?.Substring(0, 1)@p.soyad?.Substring(0, 1)</div>
+                                    <div class="flex-grow-1">
+                                        <div class="fw-semibold">@p.ad @p.soyad</div>
+                                        <div class="small text-muted">@p.kullanici_adi</div>
+                                    </div>
+                                    <span class="unread-badge d-none" id="badge-@p.kullanici_adi">0</span>
+                                </div>
+                            </div>
+                        }
+                    }
+                }
+            </div>
+        </div>
+
+        <!-- Sohbet Paneli -->
+        <div class="chat-panel">
+            <div class="chat-header" id="chatHeader">
+                <div class="d-flex align-items-center">
+                    <div class="contact-avatar me-3" id="selectedAvatar">?</div>
+                    <div>
+                        <h6 class="mb-0 fw-bold" id="selectedName">Bir kişi seçin</h6>
+                        <small class="opacity-75" id="selectedUsername"></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="messages-area" id="messagesArea">
+                <div class="text-center text-muted py-5">
+                    <i class="bi bi-chat-dots fs-1 mb-3 d-block opacity-50"></i>
+                    <p>Mesajlaşmaya başlamak için bir kişi seçin</p>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <div class="input-group">
+                    <input type="text" id="messageInput" class="form-control rounded-start-pill px-4 border-end-0" 
+                           placeholder="Mesajınızı yazın..." disabled onkeypress="if(event.keyCode==13) sendMessage()">
+                    <button class="btn btn-primary-corporate rounded-end-pill px-4" onclick="sendMessage()" id="sendBtn" disabled>
+                        <i class="bi bi-send-fill"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.min.js"></script>
+    <script>
+        let selectedUser = null;
+        let selectedFullName = null;
+        const currentUser = "@User.Identity.Name";
+
+        // Bildirim izni iste
+        if ("Notification" in window && Notification.permission === "default") {
+            Notification.requestPermission();
+        }
+
+        // Bildirim sesi
+        const notificationSound = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBTGH0fPTgjMGHm7A7+OZURE');
+
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/chatHub")
+            .build();
+
+        connection.on("ReceivePrivateMessage", function (sender, receiver, message, time) {
+            if ((sender === selectedUser && receiver === currentUser) || 
+                (sender === currentUser && receiver === selectedUser)) {
+                displayMessage(sender, message, time);
+            } else if (sender !== currentUser) {
+                // Okunmamış mesaj bildirimi
+                const badge = document.getElementById(`badge-${sender}`);
+                if (badge) {
+                    badge.classList.remove('d-none');
+                    badge.textContent = parseInt(badge.textContent || 0) + 1;
+                }
+
+                // Tarayıcı bildirimi göster
+                showNotification(sender, message);
+                
+                // Ses çal
+                playNotificationSound();
+                
+                // Toast bildirimi
+                showToast(sender, message);
+            }
+        });
+
+        connection.start().catch(err => console.error(err.toString()));
+
+        function showNotification(sender, message) {
+            if ("Notification" in window && Notification.permission === "granted") {
+                const notification = new Notification(`Yeni Mesaj: ${sender}`, {
+                    body: message.substring(0, 100),
+                    icon: '/favicon.ico',
+                    badge: '/favicon.ico',
+                    tag: 'zenith-message',
+                    requireInteraction: false
+                });
+
+                notification.onclick = function() {
+                    window.focus();
+                    notification.close();
+                };
+
+                setTimeout(() => notification.close(), 5000);
+            }
+        }
+
+        function playNotificationSound() {
+            try {
+                notificationSound.play().catch(e => console.log('Ses çalınamadı:', e));
+            } catch (e) {
+                console.log('Ses hatası:', e);
+            }
+        }
+
+        function showToast(sender, message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast-notification';
+            toast.innerHTML = `
+                <div class="d-flex align-items-start">
+                    <div class="contact-avatar me-3" style="width: 40px; height: 40px; font-size: 1rem;">
+                        ${sender.substring(0, 2).toUpperCase()}
+                    </div>
+                    <div class="flex-grow-1">
+                        <div class="fw-bold small">${sender}</div>
+                        <div class="small text-muted">${message.substring(0, 50)}${message.length > 50 ? '...' : ''}</div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(toast);
+            
+            setTimeout(() => toast.classList.add('show'), 100);
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 4000);
+        }
+
+        function selectContact(username, fullName) {
+            selectedUser = username;
+            selectedFullName = fullName;
+            
+            // UI güncelle
+            document.getElementById('selectedName').textContent = fullName;
+            document.getElementById('selectedUsername').textContent = username;
+            document.getElementById('selectedAvatar').textContent = fullName.split(' ').map(n => n[0]).join('');
+            document.getElementById('messageInput').disabled = false;
+            document.getElementById('sendBtn').disabled = false;
+
+            // Aktif kişiyi işaretle
+            document.querySelectorAll('.contact-item').forEach(item => item.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            // Badge temizle
+            const badge = document.getElementById(`badge-${username}`);
+            if (badge) {
+                badge.classList.add('d-none');
+                badge.textContent = '0';
+            }
+
+            // Mesajları yükle
+            loadMessages(username);
+        }
+
+        function loadMessages(username) {
+            fetch(`/Home/GetPrivateMessages?otherUser=${username}`)
+                .then(res => res.json())
+                .then(messages => {
+                    const area = document.getElementById('messagesArea');
+                    area.innerHTML = '';
+                    messages.forEach(msg => {
+                        displayMessage(msg.gonderen_ad, msg.icerik, new Date(msg.tarih).toLocaleTimeString('tr-TR', {hour: '2-digit', minute:'2-digit'}));
+                    });
+                    area.scrollTop = area.scrollHeight;
+                });
+        }
+
+        function displayMessage(sender, message, time) {
+            const area = document.getElementById('messagesArea');
+            const isSent = sender === currentUser;
+            
+            const msgDiv = document.createElement('div');
+            msgDiv.className = `message-bubble ${isSent ? 'message-sent' : 'message-received'} d-flex flex-column`;
+            msgDiv.innerHTML = `
+                <div>${message}</div>
+                <div class="message-time text-end">${time}</div>
+            `;
+            area.appendChild(msgDiv);
+            area.scrollTop = area.scrollHeight;
+        }
+
+        function sendMessage() {
+            if (!selectedUser) return;
+            
+            const message = document.getElementById('messageInput').value.trim();
+            if (!message) return;
+
+            connection.invoke("SendPrivateMessage", currentUser, selectedUser, message)
+                .catch(err => console.error(err.toString()));
+            
+            document.getElementById('messageInput').value = '';
+        }
+    </script>
+}

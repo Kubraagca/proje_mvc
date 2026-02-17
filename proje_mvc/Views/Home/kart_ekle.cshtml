@@ -1,0 +1,31 @@
+﻿@model proje_mvc.Models.KartModel
+
+@{
+    ViewData["Title"] = "Kart Ekle";
+    var kurumlar = ViewBag.Kurumlar as List<dynamic> ?? new List<dynamic>();
+}
+
+
+    
+
+
+<form method="post">
+    <div class="form-group">
+        <label for="Id">Personel ID</label>
+        <select asp-for="Id" class="form-control" asp-items="@(new SelectList(ViewBag.Personeller, "Id", "ad_soyad"))">
+            <option value="">Seçiniz</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="kayit_tarihi">Kayıt Tarihi</label>
+        <input type="date" class="form-control" id="kayit_tarihi" name="kayit_tarihi" value="@Model?.kayit_tarihi" required />
+    </div>
+    <div class="form-group">
+        <label for="kurum_id">Kurum ID</label>
+        <select asp-for="Id" class="form-control" asp-items="@(new SelectList(ViewBag.Kurumlar, "Id", "kurum_adi"))">
+            <option value="">Seçiniz</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>

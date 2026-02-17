@@ -1,0 +1,173 @@
+﻿@model List<proje_mvc.Models.PersonelModel>
+@{
+    ViewData["Title"] = "Personel Listesi";
+}
+
+<div class="card-premium overflow-hidden">
+    <div class="d-flex justify-content-between align-items-center p-4 border-bottom bg-light bg-opacity-50">
+        <h5 class="mb-0 fw-bold"><i class="bi bi-people me-2 text-primary"></i> Kurumsal Personel Veritabanı</h5>
+        <div class="d-flex gap-2">
+            <div class="input-group input-group-sm" style="width: 250px;">
+                <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
+                <input type="text" id="personelSearch" class="form-control border-start-0" placeholder="Personel ara..." onkeyup="searchPersonel()">
+            </div>
+            <a href="/Home/personel_ekle" class="btn btn-primary-corporate btn-sm rounded-pill px-4">
+                <i class="bi bi-person-plus me-2"></i> Yeni Personel
+            </a>
+        </div>
+    </div>
+    
+    <div class="p-0">
+        <table class="table-corporate mb-0" id="personelTable">
+            <thead>
+                <tr>
+                    <th>Personel</th>
+                    <th>TC / Kimlik</th>
+                    <th>İletişim</th>
+                    <th>İşe Giriş</th>
+                    <th class="text-end">İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var personel in Model)
+                {
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; font-weight: 700;">
+                                    @personel.ad.Substring(0,1)@personel.soyad.Substring(0,1)
+                                </div>
+                                <div>
+                                    <div class="fw-bold text-dark">@personel.ad @personel.soyad</div>
+                                    <span class="text-muted small">ID: #@personel.personel_id</span>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="fw-medium text-secondary">@personel.TC</div>
+                            <div class="text-muted x-small">Kayıt: @personel.Id</div>
+                        </td>
+                        <td>
+                            <div class="small"><i class="bi bi-telephone text-muted me-2"></i>@personel.telefon</div>
+                            <div class="small text-muted text-truncate" style="max-width: 200px;"><i class="bi bi-geo-alt me-2"></i>@personel.adres</div>
+                        </td>
+                        <td>
+                            <div class="fw-semibold">@personel.ise_baslama_tarihi?.ToString("dd.MM.yyyy")</div>
+                            <span class="badge bg-success bg-opacity-10 text-success x-small border border-success border-opacity-25">Aktif</span>
+                        </td>
+                        <td class="text-end">
+                            <button type="button" class="btn btn-link link-primary p-0 me-3" 
+                                    onclick="openPersonelModal('@personel.personel_id','@personel.ad','@personel.soyad','@personel.dogum_tarihi','@personel.adres','@personel.telefon','@personel.TC','@personel.ise_baslama_tarihi','@personel.kurum_id','@personel.kart_id')">
+                                <i class="bi bi-pencil-square fs-5"></i>
+                            </button>
+                            <form method="post" action="/Home/personel_sil" style="display:inline">
+                                <input type="hidden" name="personel_id" value="@personel.personel_id" />
+                                <button type="submit" class="btn btn-link link-danger p-0" onclick="return confirm('Silmek istediğinizden emin misiniz?');">
+                                    <i class="bi bi-trash3 fs-5"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="personelModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 shadow-lg" style="border-radius: 1rem;">
+            <div class="modal-header bg-primary text-white" style="border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
+                <h5 class="modal-title fw-bold">Personel Bilgilerini Güncelle</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body p-4">
+                <form method="post" action="/Home/personel_guncelle">
+                    <input type="hidden" id="modal_personel_id" name="personel_id" />
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">Ad</label>
+                            <input type="text" id="modal_ad" name="ad" class="form-control rounded-3" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">Soyad</label>
+                            <input type="text" id="modal_soyad" name="soyad" class="form-control rounded-3" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">Doğum Tarihi</label>
+                            <input type="date" id="modal_dogum_tarihi" name="dogum_tarihi" class="form-control rounded-3" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">TC / Pasaport No</label>
+                            <input type="text" id="modal_tc" name="TC" class="form-control rounded-3" />
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label small fw-bold text-muted">Adres</label>
+                            <textarea id="modal_adres" name="adres" class="form-control rounded-3" rows="2"></textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">Telefon</label>
+                            <input type="text" id="modal_telefon" name="telefon" class="form-control rounded-3" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">İşe Başlama Tarihi</label>
+                            <input type="date" id="modal_ise_baslama" name="ise_baslama_tarihi" class="form-control rounded-3" />
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-top d-flex justify-content-end gap-2">
+                        <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">İptal</button>
+                        <button type="submit" class="btn btn-primary-corporate rounded-pill px-4">Değişiklikleri Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function searchPersonel() {
+            var input = document.getElementById('personelSearch');
+            var filter = input.value.toUpperCase();
+            var table = document.getElementById("personelTable");
+            var tr = table.getElementsByTagName("tr");
+
+            for (var i = 1; i < tr.length; i++) {
+                var found = false;
+                var tds = tr[i].getElementsByTagName("td");
+                for (var j = 0; j < tds.length; j++) {
+                    if (tds[j].textContent.toUpperCase().indexOf(filter) > -1) {
+                        found = true;
+                        break;
+                    }
+                }
+                tr[i].style.display = found ? "" : "none";
+            }
+        }
+
+        function openPersonelModal(id, ad, soyad, dogum, adres, telefon, tc, ise_baslama, kurum_id, kart_id) {
+            document.getElementById("modal_personel_id").value = id;
+            document.getElementById("modal_ad").value = ad;
+            document.getElementById("modal_soyad").value = soyad;
+            document.getElementById("modal_dogum_tarihi").value = formatDate(dogum);
+            document.getElementById("modal_adres").value = adres;
+            document.getElementById("modal_telefon").value = telefon;
+            document.getElementById("modal_tc").value = tc;
+            document.getElementById("modal_ise_baslama").value = formatDate(ise_baslama);
+
+            var myModal = new bootstrap.Modal(document.getElementById('personelModal'));
+            myModal.show();
+        }
+
+        function formatDate(dateStr) {
+            if (!dateStr || dateStr === 'null') return "";
+            const date = new Date(dateStr);
+            if (isNaN(date.getTime())) return "";
+            const year = date.getFullYear();
+            const month = ('0' + (date.getMonth() + 1)).slice(-2);
+            const day = ('0' + date.getDate()).slice(-2);
+            return `${year}-${month}-${day}`;
+        }
+    </script>
+}

@@ -1,0 +1,179 @@
+﻿@model PersonelModel
+@{
+    ViewData["Title"] = "Sistem Ayarları";
+}
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card-premium">
+            <div class="p-4 border-bottom bg-light bg-opacity-50">
+                <h5 class="mb-0 fw-bold"><i class="bi bi-gear me-2 text-primary"></i> Kullanıcı & Sistem Tercihleri</h5>
+                <p class="text-muted small mb-0 mt-1">Hesap bilgilerinizi ve uygulama tercihlerini buradan yönetebilirsiniz.</p>
+            </div>
+            
+            <div class="p-4">
+                <ul class="nav nav-pills mb-4 gap-2" id="ayarlarTabs">
+                    <li class="nav-item">
+                        <button class="nav-link active rounded-pill px-4 btn-sm fw-semibold" data-bs-toggle="tab" data-bs-target="#kisisel">
+                           <i class="bi bi-person-lines-fill me-2"></i> Kişisel Bilgiler
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link rounded-pill px-4 btn-sm fw-semibold" data-bs-toggle="tab" data-bs-target="#temaDuzen">
+                           <i class="bi bi-palette me-2"></i> Görünüm & Bölge
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link rounded-pill px-4 btn-sm fw-semibold" data-bs-toggle="tab" data-bs-target="#guvenlik">
+                           <i class="bi bi-shield-lock me-2"></i> Güvenlik
+                        </button>
+                    </li>
+                </ul>
+
+                <div class="tab-content border-top pt-4">
+                    <!-- Kişisel Bilgiler -->
+                    <div class="tab-pane fade show active" id="kisisel">
+                        <form asp-action="Ayarlar" method="post">
+                            <input type="hidden" asp-for="Id" />
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold text-muted">Ad</label>
+                                    <input asp-for="ad" class="form-control rounded-3" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold text-muted">Soyad</label>
+                                    <input asp-for="soyad" class="form-control rounded-3" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold text-muted">Kullanıcı Adı</label>
+                                    <input asp-for="kullanici_adi" class="form-control rounded-3" readonly />
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold text-muted">Telefon</label>
+                                    <input asp-for="telefon" class="form-control rounded-3" />
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label small fw-bold text-muted">Adres</label>
+                                    <textarea asp-for="adres" class="form-control rounded-3" rows="2"></textarea>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label small fw-bold text-muted">TC Kimlik / Pasaport</label>
+                                    <input asp-for="TC" class="form-control rounded-3" />
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <button type="submit" class="btn btn-primary-corporate rounded-pill px-4">
+                                    <i class="bi bi-save me-2"></i> Profili Güncelle
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Tema & Dil -->
+                    <div class="tab-pane fade" id="temaDuzen">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <h6 class="fw-bold mb-3"><i class="bi bi-moon-stars me-2"></i> Arayüz Teması</h6>
+                                <select class="form-select rounded-3" id="theme">
+                                    <option>Açık Tema (Kurumsal)</option>
+                                    <option>Koyu Tema (Karanlık)</option>
+                                    <option>Sistem Varsayılanı</option>
+                                </select>
+                                <p class="text-muted small mt-2">Uygulama renk paleti tercihinizi belirleyin.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h6 class="fw-bold mb-3"><i class="bi bi-translate me-2"></i> Sistem Dili</h6>
+                                <select class="form-select rounded-3" id="language">
+                                    <option value="tr">Türkçe (TR)</option>
+                                    <option value="en">English (US)</option>
+                                    <option value="de">Deutsch (DE)</option>
+                                </select>
+                                <p class="text-muted small mt-2">Uygulama arayüz dilini değiştirin.</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 border-top pt-3">
+                            <button onclick="ayarlarKaydet()" class="btn btn-primary-corporate rounded-pill px-4">
+                                <i class="bi bi-check2-circle me-2"></i> Tercihleri Kaydet
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Güvenlik -->
+                    <div class="tab-pane fade" id="guvenlik">
+                        <h6 class="fw-bold mb-4"><i class="bi bi-key me-2 text-danger"></i> Şifre Değiştir</h6>
+                        <form class="row g-3" style="max-width: 400px;">
+                            <div class="col-12">
+                                <label class="form-label small fw-bold text-muted">Mevcut Şifre</label>
+                                <input type="password" name="MevcutSifre" class="form-control rounded-3" required />
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small fw-bold text-muted">Yeni Şifre</label>
+                                <input type="password" name="YeniSifre" class="form-control rounded-3" required />
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small fw-bold text-muted">Yeni Şifre (Tekrar)</label>
+                                <input type="password" name="YeniSifreTekrar" class="form-control rounded-3" required />
+                            </div>
+                            <div class="col-12 mt-4">
+                                <button type="submit" class="btn btn-danger rounded-pill px-4">
+                                    <i class="bi bi-lock me-2"></i> Şifreyi Güncelle
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="card-premium h-100">
+            <div class="p-4 border-bottom bg-light bg-opacity-50">
+                <h6 class="mb-0 fw-bold">Hesap Durumu</h6>
+            </div>
+            <div class="p-4 text-center">
+                <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+                    <i class="bi bi-person-check fs-1"></i>
+                </div>
+                <h5 class="fw-bold mb-1">@Model.ad @Model.soyad</h5>
+                <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3 border border-success border-opacity-25 mb-4">Onaylı Hesap</span>
+                
+                <div class="text-start mt-4">
+                    <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+                        <span class="text-muted small">Son Giriş:</span>
+                        <span class="small fw-semibold">Bugün, 09:45</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2 pb-2 border-bottom">
+                        <span class="text-muted small">Rol:</span>
+                        <span class="small fw-semibold">Yönetici / Admin</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <span class="text-muted small">Kurum ID:</span>
+                        <span class="small fw-semibold">#@Model.kurum_id</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function ayarlarKaydet() {
+            const tema = document.getElementById("theme").value;
+            const dil = document.getElementById("language").value;
+
+            fetch('/Home/AyarlarKaydet', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ tema: tema, dil: dil })
+            })
+            .then(resp => {
+                if (resp.ok) alert("Ayarlar başarıyla kaydedildi.");
+                else alert("Ayarlar kaydedilirken bir hata oluştu.");
+            });
+        }
+    </script>
+}

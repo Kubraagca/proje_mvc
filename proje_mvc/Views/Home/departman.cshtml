@@ -1,0 +1,146 @@
+﻿@model List<proje_mvc.Models.DepartmanModel>
+
+@{
+    ViewData["Title"] = "Departman Yönetimi";
+}
+
+<div class="card-premium overflow-hidden mb-4">
+    <div class="p-4 border-bottom bg-light bg-opacity-50 d-flex justify-content-between align-items-center">
+        <h5 class="mb-0 fw-bold text-primary"><i class="bi bi-diagram-3-fill me-2"></i> Kurumsal Departmanlar</h5>
+        <button class="btn btn-primary-corporate btn-sm" data-bs-toggle="collapse" data-bs-target="#collapseAdd">
+            <i class="bi bi-plus-circle me-2"></i> Yeni Departman Tanımla
+        </button>
+    </div>
+
+    <!-- Yeni Departman Ekleme (Hızlı Panel) -->
+    <div class="collapse" id="collapseAdd">
+        <div class="p-4 bg-light border-bottom">
+            <form asp-action="departman" method="post" class="row g-3 align-items-end">
+                <div class="col-md-5">
+                    <label class="form-label small fw-bold text-muted">Departman Adı</label>
+                    <input type="text" name="departman_adi" class="form-control rounded-3" placeholder="Örn: Operasyon Merkezi" required />
+                </div>
+                <div class="col-md-5">
+                    <label class="form-label small fw-bold text-muted">Birim Yöneticisi</label>
+                    <select name="yonetici_id" class="form-select rounded-3">
+                        <option value="">Yönetici Atayınız...</option>
+                        @foreach (var personel in (SelectList)ViewBag.PersonelListesi)
+                        {
+                            <option value="@personel.Value">@personel.Text</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary-corporate w-100">Tanımla</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="table-responsive p-0">
+        <table class="table table-corporate mb-0">
+            <thead>
+                <tr>
+                    <th class="ps-4">ID</th>
+                    <th>Departman Ünvanı</th>
+                    <th>Birim Sorumlusu</th>
+                    <th class="text-end pe-4">İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var d in Model)
+                {
+                    <tr>
+                        <td class="ps-4"><span class="badge bg-light text-dark border fw-medium">#@d.departman_id</span></td>
+                        <td>
+                            <div class="fw-bold text-primary">@d.departman_adi</div>
+                        </td>
+                        <td>
+                            @if (!string.IsNullOrEmpty(d.yonetici_adSoyad))
+                            {
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-primary bg-opacity-10 p-2 rounded-circle text-primary me-2 x-small">
+                                        <i class="bi bi-person-check-fill"></i>
+                                    </div>
+                                    <span class="small">@d.yonetici_adSoyad</span>
+                                </div>
+                            }
+                            else
+                            {
+                                <span class="text-muted small italic">Atanmadı</span>
+                            }
+                        </td>
+                        <td class="text-end pe-4">
+                            <div class="btn-group shadow-sm">
+                                <button class="btn btn-sm btn-outline-primary"
+                                        data-bs-toggle="modal" data-bs-target="#editModal"
+                                        data-id="@d.departman_id"
+                                        data-adi="@d.departman_adi"
+                                        data-yonetici="@d.yonetici_id">
+                                    <i class="bi bi-pencil-square"></i> Düzenle
+                                </button>
+                                <form asp-action="departman_sil" method="post" class="d-inline" onsubmit="return confirm('Bu departmanı silmek tüm hiyerarşiyi etkileyebilir. Emin misiniz?');">
+                                    <input type="hidden" name="id" value="@d.departman_id" />
+                                    <button type="submit" class="btn btn-sm btn-outline-danger">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Düzenleme Modal -->
+<div class="modal fade" id="editModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <form asp-action="departman_guncelle" method="post" id="editForm" class="modal-content border-0 shadow-lg">
+            <div class="modal-header bg-primary text-white border-0">
+                <h5 class="modal-title fw-bold"><i class="bi bi-pencil-square me-2"></i> Departman Düzenle</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body p-4">
+                <input type="hidden" name="departman_id" id="editDepartmanId" />
+
+                <div class="mb-4">
+                    <label class="form-label small fw-bold">Departman Adı</label>
+                    <input type="text" name="departman_adi" id="editDepartmanAdi" class="form-control rounded-3" required />
+                </div>
+
+                <div class="mb-0">
+                    <label class="form-label small fw-bold">Birim Yöneticisi</label>
+                    <select name="yonetici_id" id="editYoneticiId" class="form-select rounded-3">
+                        <option value="">Yönetici Değiştir...</option>
+                        @foreach (var personel in (SelectList)ViewBag.PersonelListesi)
+                        {
+                            <option value="@personel.Value">@personel.Text</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer border-0 p-4 pt-0">
+                <button type="button" class="btn btn-light rounded-pill px-4" data-bs-dismiss="modal">Vazgeç</button>
+                <button type="submit" class="btn btn-primary-corporate rounded-pill px-4">Değişiklikleri Kaydet</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        var editModal = document.getElementById('editModal')
+        editModal.addEventListener('show.bs.modal', function (event) {
+            var button = event.relatedTarget;
+            var id = button.getAttribute('data-id');
+            var adi = button.getAttribute('data-adi');
+            var yonetici = button.getAttribute('data-yonetici');
+
+            editModal.querySelector('#editDepartmanId').value = id;
+            editModal.querySelector('#editDepartmanAdi').value = adi;
+            editModal.querySelector('#editYoneticiId').value = yonetici;
+        });
+    </script>
+}

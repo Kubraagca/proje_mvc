@@ -1,0 +1,61 @@
+﻿@model proje_mvc.Models.PersonelModel
+
+@{
+    ViewData["Title"] = "Profil Bilgilerim";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card-premium h-100 text-center p-5 border-0 shadow-lg" style="background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);">
+            <div class="position-relative mb-4">
+                <div class="avatar-container mx-auto" style="width: 160px; height: 160px; padding: 5px; background: linear-gradient(45deg, #2196f3, #00d2ff); border-radius: 50%;">
+                    <img src="@(string.IsNullOrEmpty(Model.foto) ? "https://ui-avatars.com/api/?name=" + Model.ad + "+" + Model.soyad + "&background=random" : Model.foto)" 
+                         class="rounded-circle shadow-sm bg-white" 
+                         style="width: 100%; height: 100%; object-fit: cover; border: 4px solid white;" />
+                </div>
+                <div class="badge bg-success rounded-pill position-absolute bottom-0 end-0 border border-4 border-white translate-middle mb-2 me-2 p-2">
+                    <span class="visually-hidden">Aktif</span>
+                </div>
+            </div>
+
+            <h3 class="fw-bold mb-1 text-primary">@Model.ad @Model.soyad</h3>
+            <p class="text-muted mb-4 fw-medium">@Model.kullanici_adi</p>
+            
+            <div class="d-flex justify-content-center gap-2 mb-4">
+                <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill border border-primary border-opacity-25">#@Model.personel_id</span>
+                <span class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2 rounded-pill border border-secondary border-opacity-25">Kurum ID: @Model.kurum_id</span>
+            </div>
+
+            <div class="text-start mt-4 pt-4 border-top">
+                <div class="d-flex justify-content-between mb-3">
+                    <span class="text-muted small fw-bold text-uppercase opacity-75">T.C. Kimlik</span>
+                    <span class="fw-semibold">@Model.TC</span>
+                </div>
+                <div class="d-flex justify-content-between mb-3">
+                    <span class="text-muted small fw-bold text-uppercase opacity-75">İletişim No</span>
+                    <span class="fw-semibold">@Model.telefon</span>
+                </div>
+                <div class="d-flex justify-content-between mb-3">
+                    <span class="text-muted small fw-bold text-uppercase opacity-75">Doğum Tarihi</span>
+                    <span class="fw-semibold">@(Model.dogum_tarihi?.ToString("dd MMM yyyy") ?? "-")</span>
+                </div>
+                <div class="d-flex justify-content-between mb-3">
+                    <span class="text-muted small fw-bold text-uppercase opacity-75">İşe Giriş</span>
+                    <span class="fw-semibold text-primary">@(Model.ise_baslama_tarihi?.ToString("dd MMM yyyy") ?? "-")</span>
+                </div>
+                <div class="mt-4">
+                    <span class="text-muted small fw-bold text-uppercase opacity-75 d-block mb-1">Adres Bilgisi</span>
+                    <div class="bg-light p-3 rounded-3 small">@Model.adres</div>
+                </div>
+            </div>
+
+            <div class="mt-5 d-grid gap-2">
+                <a href="/Home/ayarlar" class="btn btn-primary-corporate py-3 rounded-pill fw-bold shadow-sm">
+                    <i class="bi bi-pencil-square me-2"></i> Profili Düzenle
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+

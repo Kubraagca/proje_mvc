@@ -1,0 +1,152 @@
+﻿@model List<proje_mvc.Models.IzinModel>
+@{
+    ViewData["Title"] = "İzin Talepleri";
+}
+
+<div class="card-premium overflow-hidden">
+    <div class="d-flex justify-content-between align-items-center p-4 border-bottom bg-light bg-opacity-50">
+        <h5 class="mb-0 fw-bold"><i class="bi bi-calendar-event me-2 text-primary"></i> Personel İzin Takibi</h5>
+        <div class="d-flex gap-2">
+            <div class="input-group input-group-sm" style="width: 250px;">
+                <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
+                <input type="text" id="izinSearch" class="form-control border-start-0" placeholder="İzin ara..." onkeyup="searchIzin()">
+            </div>
+            <a href="/Home/izin_ekle" class="btn btn-primary-corporate btn-sm rounded-pill px-4">
+                <i class="bi bi-plus-lg me-2"></i> Yeni İzin Talebi
+            </a>
+        </div>
+    </div>
+    
+    <div class="p-0">
+        <table class="table-corporate mb-0" id="izinTable">
+            <thead>
+                <tr>
+                    <th>Personel Bilgisi</th>
+                    <th>Tarih Aralığı</th>
+                    <th>İzin Türü</th>
+                    <th>Açıklama</th>
+                    <th class="text-end">İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var izin in Model)
+                {
+                    <tr>
+                        <td class="fw-bold text-dark">
+                            <i class="bi bi-person text-muted me-2"></i>Pers. ID: @izin.personel_id
+                        </td>
+                        <td>
+                            <div class="small fw-semibold text-secondary">
+                                <i class="bi bi-calendar-range me-2 text-muted"></i>
+                                @izin.izin_baslangic_tarihi?.ToString("dd MMM") - @izin.izin_bitis_tarihi?.ToString("dd MMM yyyy")
+                            </div>
+                        </td>
+                        <td>
+                            <span class="badge rounded-pill bg-info bg-opacity-10 text-info border border-info border-opacity-25 px-3">
+                                @izin.izin_turu
+                            </span>
+                        </td>
+                        <td class="small text-muted text-truncate" style="max-width: 250px;">
+                            @izin.izin_aciklama
+                        </td>
+                        <td class="text-end">
+                            <button type="button" class="btn btn-link link-primary p-0 me-3" 
+                                    onclick="openIzinModal('@izin.izin_id', '@izin.personel_id', '@izin.izin_baslangic_tarihi?.ToString("yyyy-MM-dd")', '@izin.izin_bitis_tarihi?.ToString("yyyy-MM-dd")', '@izin.izin_turu', '@izin.izin_aciklama', '@izin.kurum_id')">
+                                <i class="bi bi-pencil-square fs-5"></i>
+                            </button>
+                            <form method="post" action="/Home/izin_sil" style="display:inline">
+                                <input type="hidden" name="izin_id" value="@izin.izin_id" />
+                                <button type="submit" class="btn btn-link link-danger p-0" onclick="return confirm('Silmek istediğinizden emin misiniz?');">
+                                    <i class="bi bi-trash3 fs-5"></i>
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="izinModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg" style="border-radius: 1rem;">
+            <div class="modal-header bg-primary text-white" style="border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
+                <h5 class="modal-title fw-bold">İzin Talebi İşlemleri</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body p-4">
+                <form method="post" action="/Home/izin_guncelle">
+                    <input type="hidden" id="modal_izin_id" name="izin_id" />
+                    <div class="row g-3">
+                        <div class="col-md-12">
+                            <label class="form-label small fw-bold text-muted">Personel ID</label>
+                            <input type="number" id="modal_personel_id" name="personel_id" class="form-control rounded-3" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">Başlangıç</label>
+                            <input type="date" id="modal_baslangic" name="izin_baslangic_tarihi" class="form-control rounded-3" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">Bitiş</label>
+                            <input type="date" id="modal_bitis" name="izin_bitis_tarihi" class="form-control rounded-3" required />
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label small fw-bold text-muted">İzin Türü</label>
+                            <select id="modal_turu" name="izin_turu" class="form-select rounded-3">
+                                <option value="Yıllık İzin">Yıllık İzin</option>
+                                <option value="Ücretsiz İzin">Ücretsiz İzin</option>
+                                <option value="Sağlık İzni">Sağlık İzni</option>
+                                <option value="Diğer">Diğer</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label small fw-bold text-muted">Açıklama</label>
+                            <textarea id="modal_aciklama" name="izin_aciklama" class="form-control rounded-3" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-top d-flex justify-content-end gap-2">
+                        <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">İptal</button>
+                        <button type="submit" class="btn btn-primary-corporate rounded-pill px-4">Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function searchIzin() {
+            var input = document.getElementById('izinSearch');
+            var filter = input.value.toUpperCase();
+            var table = document.getElementById("izinTable");
+            var tr = table.getElementsByTagName("tr");
+
+            for (var i = 1; i < tr.length; i++) {
+                var found = false;
+                var tds = tr[i].getElementsByTagName("td");
+                for (var j = 0; j < tds.length; j++) {
+                    if (tds[j].textContent.toUpperCase().indexOf(filter) > -1) {
+                        found = true;
+                        break;
+                    }
+                }
+                tr[i].style.display = found ? "" : "none";
+            }
+        }
+
+        function openIzinModal(id, p_id, baslangic, bitis, turu, aciklama, kurum_id) {
+            document.getElementById("modal_izin_id").value = id;
+            document.getElementById("modal_personel_id").value = p_id;
+            document.getElementById("modal_baslangic").value = baslangic;
+            document.getElementById("modal_bitis").value = bitis;
+            document.getElementById("modal_turu").value = turu;
+            document.getElementById("modal_aciklama").value = aciklama;
+
+            var myModal = new bootstrap.Modal(document.getElementById('izinModal'));
+            myModal.show();
+        }
+    </script>
+}

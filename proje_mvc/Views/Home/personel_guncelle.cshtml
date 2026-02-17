@@ -1,0 +1,97 @@
+﻿@model proje_mvc.Models.PersonelModel
+
+@{
+    ViewData["Title"] = "Personel Bilgilerini Güncelle";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-9">
+        <div class="card-premium overflow-hidden">
+            <div class="p-4 border-bottom bg-light bg-opacity-50 d-flex justify-content-between align-items-center">
+                <h5 class="mb-0 fw-bold text-primary"><i class="bi bi-person-gear me-2"></i> Personel Dosyası Düzenleme</h5>
+                <a href="/Home/personel_listele" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+                    <i class="bi bi-arrow-left me-2"></i> Listeye Dön
+                </a>
+            </div>
+
+            <div class="p-4 bg-white">
+                <form asp-action="personel_guncelle" method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="personel_id" value="@Model.personel_id" />
+                    <input type="hidden" name="Id" value="@Model.Id" />
+
+                    <div class="row g-4">
+                        <!-- Profil Özeti -->
+                        <div class="col-12 mb-2">
+                            <div class="d-flex align-items-center p-3 bg-primary bg-opacity-10 rounded-4 border border-primary border-opacity-10">
+                                <div class="bg-primary text-white p-3 rounded-circle me-3">
+                                    <i class="bi bi-person-fill fs-3"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0 fw-bold text-primary">@Model.ad @Model.soyad</h5>
+                                    <span class="text-muted small">Kayıtlı Personel ID: #@Model.personel_id</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">Ad</label>
+                            <input type="text" name="ad" class="form-control rounded-3" value="@Model.ad" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">Soyad</label>
+                            <input type="text" name="soyad" class="form-control rounded-3" value="@Model.soyad" required />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">TC Kimlik No</label>
+                            <input type="text" name="TC" class="form-control rounded-3" value="@Model.TC" required maxlength="11" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">İletişim Telefonu</label>
+                            <input type="tel" name="telefon" class="form-control rounded-3" value="@Model.telefon" required />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">Doğum Tarihi</label>
+                            <input type="date" name="dogum_tarihi" class="form-control rounded-3" value="@Model.dogum_tarihi?.ToString("yyyy-MM-dd")" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">İşe Başlama Tarihi</label>
+                            <input type="date" name="ise_baslama_tarihi" class="form-control rounded-3" value="@Model.ise_baslama_tarihi?.ToString("yyyy-MM-dd")" required />
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label small fw-bold text-muted">Adres Bilgisi</label>
+                            <textarea name="adres" class="form-control rounded-3" rows="2" required>@Model.adres</textarea>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">Kurum Ataması</label>
+                            <select name="kurum_id" class="form-select rounded-3 shadow-sm border-primary border-opacity-25">
+                                <option value="">Atanmamış</option>
+                                @foreach (var kurum in ViewBag.Kurumlar)
+                                {
+                                    <option value="@kurum.Id" selected="@(Model.kurum_id?.ToString() == kurum.Id.ToString() ? "selected" : null)">@kurum.kurum_adi</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">Erişim Kart ID</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0"><i class="bi bi-credit-card-2-front"></i></span>
+                                <input type="text" name="kart_id" class="form-control rounded-end-3 border-start-0" value="@Model.kart_id" placeholder="Yeni Kart ID..." />
+                            </div>
+                        </div>
+
+                        <div class="col-12 text-end mt-5 pt-3 border-top">
+                            <button type="submit" class="btn btn-primary-corporate px-5 py-2 fw-bold">
+                                Değişiklikleri Kaydet <i class="bi bi-check2-all ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

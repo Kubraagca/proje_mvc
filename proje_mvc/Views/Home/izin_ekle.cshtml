@@ -1,0 +1,73 @@
+﻿@model proje_mvc.Models.IzinModel
+
+@{
+    ViewData["Title"] = "İzin Talebi Oluştur";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-7">
+        <div class="card-premium overflow-hidden">
+            <div class="p-4 border-bottom bg-light bg-opacity-50 d-flex justify-content-between align-items-center">
+                <h5 class="mb-0 fw-bold text-primary"><i class="bi bi-calendar-plus me-2"></i> Yeni İzin Talebi</h5>
+                <a href="/Home/izin_listele" class="btn btn-outline-secondary btn-sm rounded-pill px-3">
+                    <i class="bi bi-arrow-left me-2"></i> Taleplerim
+                </a>
+            </div>
+
+            <div class="p-4 bg-white">
+                <form method="post">
+                    @Html.AntiForgeryToken()
+                    
+                    <div class="row g-4">
+                        <div class="col-md-6 text-center py-3 bg-light rounded-4 mb-2">
+                            <label class="form-label small fw-bold text-muted d-block">Personel Bilgisi</label>
+                            <span class="fw-bold text-primary fs-5">@Model.ad</span>
+                            <div class="small text-muted">ID: #@Model.personel_id</div>
+                            <input type="hidden" name="personel_id" value="@Model.personel_id" />
+                            <input type="hidden" name="ad" value="@Model.ad" />
+                        </div>
+
+                        <div class="col-md-6 d-flex flex-column justify-content-center">
+                            <label class="form-label small fw-bold text-muted">İzin Kategorisi</label>
+                            <select class="form-select rounded-3 shadow-sm" name="izin_turu" required>
+                                <option value="1">Yıllık İzin</option>
+                                <option value="2">Hastalık İzni</option>
+                                <option value="3">Mazeret İzni</option>
+                                <option value="4">Babalık/Refakat İzni</option>
+                                <option value="5">Doğum İzni</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">Başlangıç Tarihi</label>
+                            <input type="date" class="form-control rounded-3" name="izin_baslangic_tarihi" value="@Model.izin_baslangic_tarihi?.ToString("yyyy-MM-dd")" required />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label small fw-bold text-muted">Bitiş Tarihi (Dahil)</label>
+                            <input type="date" class="form-control rounded-3" name="izin_bitis_tarihi" value="@Model.izin_bitis_tarihi?.ToString("yyyy-MM-dd")" required />
+                        </div>
+
+                        <div class="col-12">
+                            <label class="form-label small fw-bold text-muted">Talep Gerekçesi / Açıklama</label>
+                            <textarea class="form-control rounded-3" name="izin_aciklama" rows="3" required placeholder="İzin talebinizin detaylarını belirtiniz...">@Model.izin_aciklama</textarea>
+                        </div>
+
+                        <div class="col-12 mt-4">
+                            <div class="alert alert-info border-0 rounded-4 d-flex align-items-center mb-0">
+                                <i class="bi bi-info-circle-fill fs-4 me-3"></i>
+                                <div class="small">Talebiniz yönetici onayına sunulacaktır. Onaylandığında sistem üzerinden bilgilendirme alacaksınız.</div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 text-end">
+                            <button type="submit" class="btn btn-primary-corporate px-5 py-2 fw-bold rounded-pill">
+                                Talebi Gönder <i class="bi bi-send-fill ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,8 +1,56 @@
-﻿@if (!string.IsNullOrEmpty(Model.foto))
-{
-    <img src="@Model.foto" width="150" />
+﻿@model PersonelModel
+@{
+    ViewData["Title"] = "Profil Fotoğrafı";
 }
 
-<p>@Model.foto</p>
-<p>Fotoğraf Yolu: @Model.foto</p>
-<img src="@Model.foto" style="border:1px solid red; width:150px" />
+<div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+        <div class="card-premium p-5 text-center shadow-lg border-0">
+            <h4 class="fw-bold text-primary mb-4"><i class="bi bi-camera me-2"></i> Profil Fotoğrafı</h4>
+            
+            <div class="avatar-wrapper mb-4 position-relative d-inline-block">
+                <div class="rounded-circle shadow-sm overflow-hidden border border-4 border-white" style="width: 200px; height: 200px;">
+                    <img src="@(string.IsNullOrEmpty(Model.foto) ? "https://ui-avatars.com/api/?name=" + Model.ad + "+" + Model.soyad + "&size=200&background=random" : Model.foto)" 
+                         class="img-fluid h-100 w-100 object-fit-cover" id="previewImg" />
+                </div>
+            </div>
+
+            <div class="text-muted small mb-4">
+                <p>En iyi görünüm için 400x400 piksel boyutunda kare bir görsel yüklemeniz önerilir. <br> İzin verilen formatlar: JPG, PNG, WEBP.</p>
+            </div>
+
+            <form asp-action="Profil" method="post" enctype="multipart/form-data">
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="ad" />
+                <input type="hidden" asp-for="soyad" />
+                
+                <div class="mb-4">
+                    <input type="file" name="fotograf" class="form-control rounded-pill" accept="image/*" onchange="previewFile()" id="fotoInput" />
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary-corporate py-3 rounded-pill fw-bold">
+                        <i class="bi bi-cloud-upload me-2"></i> Fotoğrafı Kaydet
+                    </button>
+                    <a href="/Home/Profil" class="btn btn-light py-2 rounded-pill text-muted small">Vazgeç</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    function previewFile() {
+        const preview = document.querySelector('#previewImg');
+        const file = document.querySelector('#fotoInput').files[0];
+        const reader = new FileReader();
+
+        reader.addEventListener("load", function () {
+            preview.src = reader.result;
+        }, false);
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+</script>

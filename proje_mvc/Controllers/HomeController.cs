@@ -47,55 +47,55 @@ namespace proje_mvc.Controllers
 
         public IActionResult Index()
         {
-            var kullaniciAdiSoyadi = HttpContext.Session.GetString("UserName");
-            var personelId = HttpContext.Session.GetString("PersonelID");
+            var personelIdStr = HttpContext.Session.GetString("PersonelID");
+            if (string.IsNullOrEmpty(personelIdStr)) return RedirectToAction("Giris");
 
+            long personelId = Convert.ToInt64(personelIdStr);
 
-
-
-            // İzinleri ve görevleri veritabanından çekiyoruz
+            // 1. İzinleri Çek (Mavi)
             var izinler = _context.mvc_izin_kayit
-    .Where(i => i.personel_id == Convert.ToInt64(personelId))
-    .Select(i => new
-    {
-        izin_baslangic_tarihi = i.izin_baslangic_tarihi.HasValue
-    ? i.izin_baslangic_tarihi.Value.ToString("yyyy-MM-ddTHH:mm:ss")
-    : null,
+                .Where(i => i.personel_id == personelId && !i.is_deleted)
+                .ToList()
+                .Select(i => new {
+                    title = "🌴 " + i.izin_turu,
+                    start = i.izin_baslangic_tarihi?.ToString("yyyy-MM-ddTHH:mm:ss"),
+                    end = i.izin_bitis_tarihi?.ToString("yyyy-MM-ddTHH:mm:ss"),
+                    className = "bg-primary border-primary text-white",
+                    extendedProps = new { type = "Izin", description = i.izin_aciklama }
+                });
 
-        izin_bitis_tarihi = i.izin_bitis_tarihi.HasValue
-    ? i.izin_bitis_tarihi.Value.ToString("yyyy-MM-ddTHH:mm:ss")
-    : null,
-        i.izin_turu,
-        i.izin_aciklama
-    }).ToList();
-
-
+            // 2. Görevleri Çek (Turuncu)
             var gorevler = _context.mvc_gorev_kayit
-                .Where(g => g.personel_id == Convert.ToInt64(personelId))  // Görevli personel filtresi
-                .Select(g => new
-                {
-                    g.gorev_baslangic_tarihi,
+                .Where(g => g.personel_id == personelId && !g.is_deleted)
+                .ToList()
+                .Select(g => new {
+                    title = "🎯 " + (g.gorev_adi ?? "Görev"),
+                    start = g.gorev_baslangic_tarihi?.ToString("yyyy-MM-ddTHH:mm:ss"),
+                    end = g.gorev_bitis_tarihi?.ToString("yyyy-MM-ddTHH:mm:ss") ?? g.gorev_baslangic_tarihi?.AddHours(1).ToString("yyyy-MM-ddTHH:mm:ss"),
+                    className = "bg-warning border-warning text-dark",
+                    extendedProps = new { type = "Gorev", description = g.gorev_aciklama }
+                });
 
-                    g.gorev_aciklama
-                }).ToList();
+            // 3. Doğum Günlerini Çek (Pembe)
+            var currentYear = DateTime.Now.Year;
+            var dogumGunleri = _context.mvc_personel_kayit
+                .Where(p => !p.is_deleted && p.dogum_tarihi.HasValue)
+                .ToList()
+                .Select(p => new {
+                    title = "🎂 " + p.ad + " " + p.soyad,
+                    start = new DateTime(currentYear, p.dogum_tarihi.Value.Month, p.dogum_tarihi.Value.Day).ToString("yyyy-MM-dd"),
+                    allDay = true,
+                    className = "bg-info border-info text-white",
+                    extendedProps = new { type = "DogumGunu" }
+                });
 
+            // 4. Tümünü Birleştir
+            var allEvents = izinler.Cast<object>()
+                .Concat(gorevler.Cast<object>())
+                .Concat(dogumGunleri.Cast<object>())
+                .ToList();
 
-            var tatil = _context.mvc_tatil
-                                       .Where(t => t.is_deleted == false)
-                                       .ToList();
-
-
-
-            if (!string.IsNullOrEmpty(HttpContext.Session.GetString("DogumTarihi")))
-            {
-                var dogumTarihi = HttpContext.Session.GetString("DogumTarihi").ToString();
-                ViewBag.dogum = dogumTarihi.ToString();
-            }
-
-            // Verileri View'e gönderiyoruz
-            ViewBag.Izinler = izinler;
-            ViewBag.Gorevler = gorevler;
-            ViewBag.tatil = tatil;
+            ViewBag.AllEvents = allEvents;
             ViewBag.Duyurular = new List<string>
             {
                 "⚠️ Sistem bakım çalışması 15 Mayıs'ta yapılacaktır.",
@@ -104,7 +104,6 @@ namespace proje_mvc.Controllers
             };
 
             return View();
-
         }
 
         public IActionResult Giris()
@@ -128,7 +127,8 @@ namespace proje_mvc.Controllers
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, kullanici.kullanici_adi),
-                    new Claim(ClaimTypes.NameIdentifier, kullanici.Id.ToString())
+                    new Claim(ClaimTypes.NameIdentifier, kullanici.Id.ToString()),
+                    new Claim(ClaimTypes.Role, kullanici.yetki ?? "Personel")
                 };
 
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -149,6 +149,32 @@ namespace proje_mvc.Controllers
             // Giriş başarısızsa
             ViewBag.Hata = "Kullanıcı adı veya şifre hatalı.";
             return View();
+        }
+
+        [Authorize]
+        [HttpPost]
+        public IActionResult gorev_kaydet(GorevModel model)
+        {
+            if (model != null)
+            {
+                var personelIdStr = HttpContext.Session.GetString("PersonelID");
+                var userName = HttpContext.Session.GetString("UserName");
+
+                if (!string.IsNullOrEmpty(personelIdStr))
+                {
+                    model.personel_id = Convert.ToInt64(personelIdStr);
+                    model.ad = userName;
+                    model.soyad = userName;
+                    model.gorev_id = Guid.NewGuid();
+                    model.is_deleted = false;
+                    
+                    _context.mvc_gorev_kayit.Add(model);
+                    _context.SaveChanges();
+                    
+                    TempData["SuccessMessage"] = "Görev başarıyla planlandı.";
+                }
+            }
+            return RedirectToAction("Index");
         }
 
         public async Task<IActionResult> Cikis()
@@ -232,9 +258,12 @@ namespace proje_mvc.Controllers
             if (kurum != null)
             {
                 kurum.is_deleted = true;
-
-                // Değişiklikleri kaydet
                 _context.SaveChanges();
+                TempData["SuccessMessage"] = "Kurum başarıyla silindi.";
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Kurum bulunamadı.";
             }
 
             return RedirectToAction("kurum_listele");
@@ -414,24 +443,23 @@ namespace proje_mvc.Controllers
             {
                 personel.is_deleted = true;
                 _context.SaveChanges();
-
-                return RedirectToAction("personel_listele");
-
+                TempData["SuccessMessage"] = "Personel başarıyla silindi.";
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Personel bulunamadı.";
             }
 
-            return NotFound();
+            return RedirectToAction("personel_listele");
         }
-
-
-
-
 
         public IActionResult personel_listele()
         {
             var personeller = _context.mvc_personel_kayit.Where(p => p.is_deleted == false).ToList();
 
-            return View(personeller); // Bu şekilde personel listesini view'a gönderin
+            return View(personeller);
         }
+
 
 
 
@@ -623,7 +651,8 @@ namespace proje_mvc.Controllers
                 izin.izin_id = Guid.NewGuid();  // GUID otomatik olarak atanır, her durumda yeni bir GUID oluşturulur
                 _context.mvc_izin_kayit.Add(izin);
                 _context.SaveChanges();
-                return RedirectToAction("izin_listele");  // Başarılıysa izin listeleme sayfasına yönlendir
+                TempData["SuccessMessage"] = "İzin talebi başarıyla oluşturuldu.";
+                return RedirectToAction("Index");  // Dashboard'a döner ki takvimde görsün
             }
 
             // Eğer model geçerli değilse, hata mesajlarını kullanıcıya göster
@@ -809,15 +838,15 @@ namespace proje_mvc.Controllers
 
         [Authorize]
         [HttpGet]
-        [HttpGet]
         public IActionResult gorev_guncelle(Guid id)
         {
             var model = _context.mvc_gorev_kayit.FirstOrDefault(x => x.gorev_id == id);
             if (model == null)
             {
-                return NotFound();
+                TempData["ErrorMessage"] = "Görev kaydı bulunamadı.";
+                return RedirectToAction("gorev_listele");
             }
-            return PartialView("_GorevGuncellePartial", model);
+            return View("gorev_guncelle", model);
         }
 
         [HttpPost]
@@ -1115,11 +1144,12 @@ namespace proje_mvc.Controllers
                 _context.mvc_departmanlar.Add(yeniDepartman);
                 _context.SaveChanges();
 
-                return RedirectToAction("Index");
+                TempData["SuccessMessage"] = "Departman başarıyla eklendi.";
+                return RedirectToAction("departman");
             }
 
-            ModelState.AddModelError("", "Departman adı boş olamaz.");
-            return RedirectToAction("Index");
+            TempData["ErrorMessage"] = "Departman adı boş olamaz.";
+            return RedirectToAction("departman");
         }
         [HttpPost]
         public IActionResult departman_sil(int id)
@@ -1129,8 +1159,9 @@ namespace proje_mvc.Controllers
             {
                 _context.mvc_departmanlar.Remove(departman);
                 _context.SaveChanges();
+                TempData["SuccessMessage"] = "Departman başarıyla silindi.";
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("departman");
         }
 
         [HttpPost]
@@ -1192,6 +1223,15 @@ namespace proje_mvc.Controllers
                 .ToList();
             
             return Json(messages);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public IActionResult AyarlarKaydet([FromBody] System.Text.Json.JsonElement data)
+        {
+            // Tema ve dil tercihlerini burada kaydedebilirsiniz. 
+            // Şu an için başarılı dönüyoruz.
+            return Ok(new { success = true });
         }
 
     }

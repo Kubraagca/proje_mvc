@@ -1,0 +1,75 @@
+@{
+    ViewData["Title"] = "İletişim";
+}
+
+<div class="row justify-content-center mt-5">
+    <div class="col-lg-10">
+        <div class="card-premium overflow-hidden border-0 shadow-lg">
+            <div class="row g-0">
+                <div class="col-md-5 bg-primary p-5 text-white d-flex flex-column justify-content-center" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;">
+                    <h2 class="fw-bold mb-4">Bizimle İletişime Geçin</h2>
+                    <p class="opacity-75 mb-5">Herhangi bir sorunuz veya talebiniz olması durumunda uzman ekibimiz size yardımcı olmaktan mutluluk duyacaktır.</p>
+                    
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="bg-white bg-opacity-10 p-3 rounded-4 me-3">
+                            <i class="bi bi-geo-alt-fill fs-4 text-accent"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0 fw-bold">Genel Merkez</h6>
+                            <span class="small opacity-75">Teknoloji Geliştirme Bölgesi, No: 42, İstanbul</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="bg-white bg-opacity-10 p-3 rounded-4 me-3">
+                            <i class="bi bi-telephone-fill fs-4 text-accent"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0 fw-bold">Telefon</h6>
+                            <span class="small opacity-75">+90 (212) 555 00 00</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center">
+                        <div class="bg-white bg-opacity-10 p-3 rounded-4 me-3">
+                            <i class="bi bi-envelope-at-fill fs-4 text-accent"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0 fw-bold">E-Posta</h6>
+                            <span class="small opacity-75">destek@zenithcore.com</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-7 p-5 bg-white">
+                    <h4 class="fw-bold text-primary mb-4">Mesaj Gönderin</h4>
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold text-muted">Ad Soyad</label>
+                                <input type="text" class="form-control rounded-3" placeholder="Örn: Ahmet Yılmaz" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold text-muted">E-Posta</label>
+                                <input type="email" class="form-control rounded-3" placeholder="ahmet@example.com" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small fw-bold text-muted">Konu</label>
+                                <input type="text" class="form-control rounded-3" placeholder="Mesajınızın konusu" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small fw-bold text-muted">Mesajınız</label>
+                                <textarea class="form-control rounded-3" rows="5" placeholder="Size nasıl yardımcı olabiliriz?" required></textarea>
+                            </div>
+                            <div class="col-12 mt-4">
+                                <button type="button" class="btn btn-primary-corporate rounded-pill px-5 py-2 fw-bold" onclick="alert('Mesajınız başarıyla iletildi! En kısa sürede size dönüş yapacağız.')">
+                                    <i class="bi bi-send-fill me-2"></i> Gönder
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

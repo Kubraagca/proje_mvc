@@ -1,85 +1,70 @@
-﻿<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gizlilik Politikası</title>
-    <style>
-        body {
-          font-family: Arial, sans-serif;
-          background-color: #fdf6e3;
-          margin: 0;
-          padding: 20px;
-          color: #333;
-        }
-        .container {
-          max-width: 900px;
-          margin: auto;
-          background-color: #fff8dc;
-          padding: 30px;
-          border-radius: 12px;
-          box-shadow: 0 0 15px rgba(0,0,0,0.1);
-        }
-        h1 {
-          color: #d35400;
-          text-align: center;
-        }
-        h2 {
-          color: #2c3e50;
-          margin-top: 30px;
-        }
-        p {
-          line-height: 1.7;
-        }
-        ul {
-          margin-left: 20px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Gizlilik Politikası</h1>
-        <p><strong>Son Güncelleme:</strong> 1 Mayıs 2025</p>
+﻿@{
+    ViewData["Title"] = "Gizlilik Politikası";
+}
 
-        <h2>1. Toplanan Bilgiler</h2>
-        <p>Hizmetlerimizi sağlarken aşağıdaki türde bilgileri toplayabiliriz:</p>
-        <ul>
-            <li>Kişisel Bilgiler: Ad, soyad, e-posta, telefon, T.C. kimlik numarası</li>
-            <li>Kullanım Bilgileri: Giriş-çıkış saatleri, IP adresi, cihaz bilgileri</li>
-            <li>Konum Bilgileri (varsa): Anlık konum verileri</li>
-        </ul>
+<div class="row justify-content-center mt-4">
+    <div class="col-lg-10">
+        <div class="card-premium p-5 shadow-sm border-0">
+            <div class="text-center mb-5">
+                <i class="bi bi-shield-lock-fill text-primary fs-1 mb-3"></i>
+                <h2 class="fw-extrabold text-primary">Gizlilik Politikası</h2>
+                <p class="text-muted small"><strong>Son Güncelleme:</strong> 1 Mayıs 2025</p>
+                <div class="mx-auto bg-primary bg-opacity-10 rounded-pill" style="width: 60px; height: 4px;"></div>
+            </div>
 
-        <h2>2. Bilgilerin Kullanımı</h2>
-        <p>Toplanan bilgiler, hizmetin sağlanması, iyileştirilmesi ve yasal yükümlülüklerin yerine getirilmesi amacıyla kullanılır.</p>
+            <div class="policy-content" style="color: var(--text-main); line-height: 1.8;">
+                <section class="mb-5">
+                    <h5 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-3">1. Toplanan Bilgiler</h5>
+                    <p>Hizmetlerimizi sağlarken aşağıdaki türde bilgileri toplayabiliriz:</p>
+                    <ul class="list-group list-group-flush bg-transparent">
+                        <li class="list-group-item bg-transparent border-0 ps-0"><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>Kişisel Bilgiler:</strong> Ad, soyad, e-posta, telefon, T.C. kimlik numarası</li>
+                        <li class="list-group-item bg-transparent border-0 ps-0"><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>Kullanım Bilgileri:</strong> Giriş-çıkış saatleri, IP adresi, cihaz bilgileri</li>
+                        <li class="list-group-item bg-transparent border-0 ps-0"><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>Konum Bilgileri:</strong> Anlık konum verileri (yalnızca yetki verilmesi durumunda)</li>
+                    </ul>
+                </section>
 
-        <h2>3. Bilgi Paylaşımı</h2>
-        <p>Kişisel bilgileriniz yalnızca aşağıdaki durumlarda paylaşılır:</p>
-        <ul>
-            <li>Yasal zorunluluklar</li>
-            <li>Hizmet sağlayıcı firmalar ile (gerekli olanlar)</li>
-            <li>Kullanıcının açık rızasıyla</li>
-        </ul>
+                <section class="mb-5">
+                    <h5 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-3">2. Bilgilerin Kullanımı</h5>
+                    <p>Toplanan bilgiler, hizmetin sağlanması, iyileştirilmesi ve yasal yükümlülüklerin yerine getirilmesi amacıyla kullanılır. Verileriniz, sistemin verimli çalışması için kurumsal güvenlik standartlarında işlenir.</p>
+                </section>
 
-        <h2>4. Bilgilerin Saklanması ve Güvenliği</h2>
-        <p>Bilgileriniz güvenli bir şekilde saklanır ve yetkisiz erişimlere karşı korunur.</p>
+                <section class="mb-5">
+                    <h5 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-3">3. Bilgi Paylaşımı</h5>
+                    <p>Kişisel bilgileriniz yalnızca aşağıdaki durumlarda paylaşılır:</p>
+                    <ul class="list-group list-group-flush bg-transparent">
+                        <li class="list-group-item bg-transparent border-0 ps-0"><i class="bi bi-arrow-right-short text-primary me-2"></i> Yasal zorunluluklar ve resmi makamların talepleri</li>
+                        <li class="list-group-item bg-transparent border-0 ps-0"><i class="bi bi-arrow-right-short text-primary me-2"></i> Hizmet sağlayıcı firmalar ile yapılan iş ortaklıkları</li>
+                        <li class="list-group-item bg-transparent border-0 ps-0"><i class="bi bi-arrow-right-short text-primary me-2"></i> Kullanıcının açık rızası olan durumlar</li>
+                    </ul>
+                </section>
 
-        <h2>5. Çerezler (Cookies)</h2>
-        <p>Kullanıcı deneyimini artırmak için çerezler kullanılabilir. İstediğiniz takdirde çerezleri tarayıcınızdan engelleyebilirsiniz.</p>
+                <section class="mb-5">
+                    <h5 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-3">4. Veri Güvenliği</h5>
+                    <p>Bilgileriniz yüksek güvenlikli sunucularda saklanır ve yetkisiz erişimlere karşı modern şifreleme yöntemleri ile korunur. ZENITH CORE altyapısı, verilerinizin gizliliğini en üst düzeyde tutmayı taahhüt eder.</p>
+                </section>
 
-        <h2>6. Kullanıcı Hakları</h2>
-        <p>Kullanıcı olarak aşağıdaki haklara sahipsiniz:</p>
-        <ul>
-            <li>Verilerinize erişme</li>
-            <li>Düzeltme ve silme talebi</li>
-            <li>İşlemeyi sınırlama ve itiraz etme</li>
-        </ul>
-
-        <h2>7. Değişiklikler</h2>
-        <p>Bu politika zaman zaman güncellenebilir. Önemli değişiklikler durumunda bilgilendirme yapılır.</p>
-
-        <h2>8. İletişim</h2>
-        <p>Herhangi bir sorunuz için bizimle iletişime geçebilirsiniz:</p>
-        <p><strong>Email:</strong> info@ornekuygulama.com</p>
+                <section class="mb-5">
+                    <h5 class="fw-bold text-dark border-start border-4 border-primary ps-3 mb-3">5. İletişim</h5>
+                    <p>Gizlilik politikamız ile ilgili her türlü soru ve bildirimleriniz için aşağıdaki kanallar üzerinden bize ulaşabilirsiniz:</p>
+                    <div class="bg-light p-4 rounded-4 mt-3">
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="bi bi-envelope-fill text-primary me-3"></i>
+                            <span><strong>E-posta:</strong> info@zenithcore.com</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-globe me-3 text-primary"></i>
+                            <span><strong>Web:</strong> www.zenithcore.com</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="text-center mt-5 border-top pt-4">
+                <a href="/Home/Index" class="btn btn-outline-primary rounded-pill px-4">
+                    <i class="bi bi-arrow-left me-2"></i> Panele Geri Dön
+                </a>
+            </div>
+        </div>
     </div>
-</body>
-</html>
+</div>
+

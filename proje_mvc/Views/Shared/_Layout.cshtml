@@ -35,15 +35,27 @@
 
         @if (User.Identity.IsAuthenticated)
         {
+            @if (User.IsInRole("Admin"))
+            {
+                <div class="nav-section-title">Admin Paneli</div>
+                <a href="/home/kurum_listele" class="nav-link-corporate">
+                    <i class="bi bi-buildings-fill"></i> Kurumsal Portföy
+                </a>
+                <a href="/home/kurum_ekle" class="nav-link-corporate">
+                    <i class="bi bi-patch-plus-fill"></i> Yeni Kurum Tanımla
+                </a>
+            }
+
             <div class="nav-section-title">Departmanlar</div>
             
             <a class="nav-link-corporate" data-bs-toggle="collapse" href="#hrSub">
-                <i class="bi bi-people-fill"></i> Personel & İzin Yönetimi <i class="bi bi-chevron-down ms-auto fs-xs"></i>
+                <i class="bi bi-people-fill"></i> Personel Yönetimi <i class="bi bi-chevron-down ms-auto fs-xs"></i>
             </a>
             <div class="collapse show" id="hrSub">
                 <a href="/home/personel_listele" class="nav-link-corporate ms-4 py-1 small">Personel Listesi</a>
                 <a href="/home/izin_listele" class="nav-link-corporate ms-4 py-1 small">İzin Talepleri</a>
                 <a href="/home/gorev_listele" class="nav-link-corporate ms-4 py-1 small">Görev Takibi</a>
+                <a href="/home/departman" class="nav-link-corporate ms-4 py-1 small">Departman Yönetimi</a>
             </div>
 
             <!-- Operations -->
@@ -65,7 +77,14 @@
             <a href="/home/ayarlar" class="nav-link-corporate">
                 <i class="bi bi-gear-fill"></i> Ayarlar
             </a>
+            <a href="/home/iletisim" class="nav-link-corporate">
+                <i class="bi bi-envelope-fill"></i> İletişim
+            </a>
+            <a href="/home/gizlilik_politikası" class="nav-link-corporate border-top border-white border-opacity-10 mt-2">
+                <i class="bi bi-shield-check"></i> Gizlilik Politikası
+            </a>
         }
+
     </div>
 
     <!-- TOP BAR -->
@@ -101,6 +120,20 @@
 
     <!-- MAIN CONTENT -->
     <main class="main-content">
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success alert-dismissible fade show rounded-4 border-0 shadow-sm mb-4" role="alert">
+                <i class="bi bi-check-circle-fill me-2"></i> @TempData["SuccessMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger alert-dismissible fade show rounded-4 border-0 shadow-sm mb-4" role="alert">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i> @TempData["ErrorMessage"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
         @RenderBody()
     </main>
 

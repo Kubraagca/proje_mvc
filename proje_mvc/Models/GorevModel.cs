@@ -18,7 +18,7 @@ namespace proje_mvc.Models
         public bool is_deleted { get; set; }
     
         public DateTime? gorev_baslangic_tarihi { get; set; }
-
+        public DateTime? gorev_bitis_tarihi { get; set; }
         public Guid gorev_id { get; set; } = Guid.NewGuid();
     }
 
